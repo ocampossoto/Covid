@@ -19,11 +19,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.13.0'
-    
-    - run: ls
     - run: cd covid
     - run: npm install
     - run: npm build
+    - run: ls
     - name: Archive production artifacts
       uses: actions/upload-artifact@v1
       with:
