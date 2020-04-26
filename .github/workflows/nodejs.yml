@@ -22,7 +22,8 @@ jobs:
     
     - run: ls
     - run: cd covid
-    - run: npm run build --if-present
+    - run: npm install
+    - run: npm run build
     - run: npm test
       env:
         CI: true
