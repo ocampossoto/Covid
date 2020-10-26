@@ -4,8 +4,8 @@ import population from './population.json';
 import NumberFormat from 'react-number-format';
 import {Row, Col, Container,Modal, Button} from 'react-bootstrap';
 import Select from 'react-select'
-import 'bootstrap/dist/css/bootstrap.css';
-class App extends React.Component {
+// import 'bootstrap/dist/css/bootstrap.css';
+class OldCharts extends React.Component {
   constructor(props){
     super(props);
 
@@ -429,4 +429,4 @@ class App extends React.Component {
 	}
 }
 
-export default App;
+export default OldCharts;
