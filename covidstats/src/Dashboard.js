@@ -18,6 +18,7 @@ import { mainListItems} from './listItems';
 import Home from './Home';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
+import CompareCountries from './compareCountries';
 import {
     BrowserRouter as Router,
     Switch,
@@ -186,6 +187,13 @@ export default function Dashboard() {
                         <Grid item xs={12} md={11} lg={11}>
                             <Paper>
                                 <USView/>
+                            </Paper>
+                        </Grid>
+                    </Route>
+                    <Route exact path="/CompareCountries">
+                        <Grid item xs={12} md={11} lg={11}>
+                            <Paper>
+                                <CompareCountries/>
                             </Paper>
                         </Grid>
                     </Route>

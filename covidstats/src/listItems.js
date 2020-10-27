@@ -6,6 +6,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import HomeIcon from '@material-ui/icons/Home';
 import PublicIcon from '@material-ui/icons/Public';
 import { Link as RouterLink } from 'react-router-dom';
+import CompareArrowsIcon from '@material-ui/icons/CompareArrows';
 export const mainListItems = (
   <div>
     <ListItem button component={RouterLink} to="/">
@@ -25,6 +26,12 @@ export const mainListItems = (
         <LocationOnIcon />
       </ListItemIcon>
       <ListItemText primary="US Charts" />
+    </ListItem>
+    <ListItem button component={RouterLink} to="/CompareCountries">
+      <ListItemIcon>
+        <CompareArrowsIcon />
+      </ListItemIcon>
+      <ListItemText primary="Compare Countries" />
     </ListItem>
   </div>
 );
