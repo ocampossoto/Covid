@@ -3,12 +3,9 @@
     import Tab from '@material-ui/core/Tab';
     import Box from '@material-ui/core/Box';
     import PropTypes from 'prop-types';
-    import StateGraphs from './StateGraphs';
     import Autocomplete from '@material-ui/lab/Autocomplete';
     import TextField from '@material-ui/core/TextField';
-    import CoungryGraphs from './CountryGraphs';
     import {DatePicker} from '@material-ui/pickers';
-    import MUIDataTable from "mui-datatables";
     import { LineChart, Line, CartesianGrid, XAxis, YAxis,Tooltip,Legend, ResponsiveContainer} from 'recharts';
 import { Grid } from '@material-ui/core';
     function TabPanel(props) {
@@ -52,7 +49,6 @@ import { Grid } from '@material-ui/core';
       }
 
     const CustomToolTip = props => {
-    console.log(props.payload);
     const { active, payload, label } = props;
     if (!active || !payload) {
         return null;
@@ -79,7 +75,6 @@ import { Grid } from '@material-ui/core';
             setValue(newValue);
         };
         const [allData, setAllData] = React.useState({});
-        const [data, setData] = React.useState([]);
         const [confiremedData, setConfiremedData] = React.useState();
         const [confiremedPerDayData, setConfiremedPerDayData] = React.useState();
         const [deathsData, setDeathsData] = React.useState([]);
@@ -87,8 +82,7 @@ import { Grid } from '@material-ui/core';
         const [recoveredData, setRecoveredData] = React.useState([]);
         const [recoveredPerDayData, setRecoveredPerDayData] = React.useState([]);
         const [keys, setKeys] = React.useState([]);
-        const [key, setKey] = React.useState("US");
-        const [include, setExclude] = React.useState(included);
+        const [include, setInclude] = React.useState(included);
         const currenDate = new Date();
         const defaultStart = new Date().setMonth(new Date().getMonth()-6);
         const [startDate, setStartDate] = React.useState(defaultStart);
@@ -117,12 +111,12 @@ import { Grid } from '@material-ui/core';
 
             for (const [key, value] of Object.entries(allData)) {
                 if(include.includes(key)){
-                    for(var day in value){
-                        var tempData = value[day];
+                    for(var t in value){
+                        var tempData = value[t];
                         var day = tempData.date;
-                         var date = new Date(day);
-                         if(date >= startDate && date <= endDate){
-                             date = date.getMonth()+1+"/"+date.getDate()+"/"+date.getFullYear();
+                         var datet = new Date(day);
+                         if(datet >= startDate && datet <= endDate){
+                             const date = datet.getMonth()+1+"/"+datet.getDate()+"/"+datet.getFullYear();
                              if(day !==""){
                                 var idConfirmed = confirmedArray.findIndex(e => e.date === date);
                                 var idDeaths = deathArray.findIndex(e=> e.date === date);
@@ -218,7 +212,7 @@ import { Grid } from '@material-ui/core';
             setDeathsData(deathArray);
             setRecoveredData(recoveredArray);
 
-        },[allData,startDate, endDate])
+        },[allData,startDate, endDate,include])
         return <div>
             <Grid container justify="center" spacing={3} align="center">
                 <Grid item lg={12} style={{ minWidth: '95%' }}>
@@ -226,7 +220,7 @@ import { Grid } from '@material-ui/core';
                         multiple
                         options={keys}
                         value={include}
-                        onChange={(e, val) => setKey(val)}
+                        onChange={(e, val) => setInclude(val)}
                         renderInput={(params) => <TextField {...params} label="Included Country" variant="outlined" />}
                     />
                 </Grid>

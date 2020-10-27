@@ -86,6 +86,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(7),
     [theme.breakpoints.up('sm')]: {
       width: theme.spacing(9),
+      flexShrink: 0,
     },
   },
   appBarSpacer: theme.mixins.toolbar,
@@ -118,7 +119,6 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -147,7 +147,7 @@ export default function Dashboard() {
         </Toolbar>
       </AppBar>
       <Drawer
-        variant="permanent"
+        
         classes={{
           paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
         }}

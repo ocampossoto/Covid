@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import { Button } from '@material-ui/core';
 export default function Home(){
     const history = useHistory();
@@ -22,8 +22,8 @@ export default function Home(){
                 Along with modifiying some 2018 population data from <a href="https://datahub.io/core/population">https://datahub.io/core/population</a> and Google search for some countries that were not on the list. 
                 </Typography>
             </Grid>
-            <Grid item item lg={10} md={12} sm={12}>
-                <Typography variant="body1">To view the visualizations select an option on the left</Typography>
+            <Grid item lg={10} md={12} sm={12}>
+                <Typography variant="body1">To view the visualizations select an option from the menu on the left</Typography>
             </Grid>
             <Grid item lg={12}>
                 <Button variant="contained" onClick={() => history.push("/World")}>World Charts</Button>
