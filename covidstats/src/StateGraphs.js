@@ -13,7 +13,7 @@ export default function StateGraphs(props) {
             <Grid item lg={12} style={{ minWidth: '95%' }}>
                 <ResponsiveContainer height={window.innerHeight*0.3}>
                     <LineChart width={window.innerWidth*0.4} data={props.data}margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
-                        <Line type="monotone" dataKey={props.item.name} stroke={props.item.color} />
+                        <Line dot={false} type="monotone" dataKey={props.item.name} stroke={props.item.color} />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis />

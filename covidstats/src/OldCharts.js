@@ -126,9 +126,9 @@ class OldCharts extends React.Component {
                     <Col>
                         <ResponsiveContainer width="99%"  height={200}>
                             <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data}>
-                                <Line type="monotone" dataKey="Confrimed" stroke="Blue" />
-                                <Line type="monotone" dataKey="Recovered" stroke="Green" />
-                                <Line type="monotone" dataKey="Deaths" stroke="darkred" />
+                                <Line dot={false} type="monotone" dataKey="Confrimed" stroke="Blue" />
+                                <Line dot={false} type="monotone" dataKey="Recovered" stroke="Green" />
+                                <Line dot={false} type="monotone" dataKey="Deaths" stroke="darkred" />
                                 <CartesianGrid stroke="#ccc" />
                                 <XAxis dataKey="name" />
                                 <YAxis />
@@ -147,9 +147,9 @@ class OldCharts extends React.Component {
                     <Col>
                         <ResponsiveContainer width="99%"  height={200}>
                         <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data}>
-                            <Line type="monotone" dataKey="Confrimed Per Day" stroke="Blue" />
-                            <Line type="monotone" dataKey="Recovered Per Day" stroke="Green" />
-                            <Line type="monotone" dataKey="Deaths Per Day" stroke="red" />
+                            <Line dot={false} type="monotone" dataKey="Confrimed Per Day" stroke="Blue" />
+                            <Line dot={false} type="monotone" dataKey="Recovered Per Day" stroke="Green" />
+                            <Line dot={false} type="monotone" dataKey="Deaths Per Day" stroke="red" />
                             <CartesianGrid stroke="#ccc" />
                             <XAxis dataKey="name" />
                             <YAxis />
@@ -173,12 +173,12 @@ class OldCharts extends React.Component {
                     <Col>
                         <ResponsiveContainer width="99%"  height={200}>
                         <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data} >
-                            <Line type="monotone" dataKey="Confrimed" stroke="Blue" strokeDasharray="5 5" />
-                            <Line type="monotone" dataKey="Recovered" stroke="Green" strokeDasharray="5 5" />
-                            <Line type="monotone" dataKey="Deaths" stroke="darkred" strokeDasharray="5 5" />
-                            <Line type="monotone" dataKey="Confrimed False" stroke="Blue" />
-                            <Line type="monotone" dataKey="Recovered False" stroke="Green" />
-                            <Line type="monotone" dataKey="Deaths False" stroke="darkred" />
+                            <Line dot={false} type="monotone" dataKey="Confrimed" stroke="Blue" strokeDasharray="5 5" />
+                            <Line dot={false} type="monotone" dataKey="Recovered" stroke="Green" strokeDasharray="5 5" />
+                            <Line dot={false} type="monotone" dataKey="Deaths" stroke="darkred" strokeDasharray="5 5" />
+                            <Line dot={false} type="monotone" dataKey="Confrimed False" stroke="Blue" />
+                            <Line dot={false} type="monotone" dataKey="Recovered False" stroke="Green" />
+                            <Line dot={false} type="monotone" dataKey="Deaths False" stroke="darkred" />
                             <CartesianGrid stroke="#ccc" />
                             <XAxis dataKey="name" />
                             <YAxis />
@@ -197,12 +197,12 @@ class OldCharts extends React.Component {
                     <Col>
                         <ResponsiveContainer width="99%"  height={200}>
                             <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data}>
-                                <Line type="monotone" dataKey="Confrimed Per Day False" stroke="Blue" />
-                                <Line type="monotone" dataKey="Recovered Per Day False" stroke="Green" />
-                                <Line type="monotone" dataKey="Deaths Per Day False" stroke="red" />
-                                <Line type="monotone" dataKey="Confrimed Per Day" stroke="Blue" strokeDasharray="5 5" />
-                                <Line type="monotone" dataKey="Recovered Per Day" stroke="Green" strokeDasharray="5 5" />
-                                <Line type="monotone" dataKey="Deaths Per Day" stroke="red" strokeDasharray="5 5" />
+                                <Line dot={false} type="monotone" dataKey="Confrimed Per Day False" stroke="Blue" />
+                                <Line dot={false} type="monotone" dataKey="Recovered Per Day False" stroke="Green" />
+                                <Line dot={false} type="monotone" dataKey="Deaths Per Day False" stroke="red" />
+                                <Line dot={false} type="monotone" dataKey="Confrimed Per Day" stroke="Blue" strokeDasharray="5 5" />
+                                <Line dot={false} type="monotone" dataKey="Recovered Per Day" stroke="Green" strokeDasharray="5 5" />
+                                <Line dot={false} type="monotone" dataKey="Deaths Per Day" stroke="red" strokeDasharray="5 5" />
                                 <CartesianGrid stroke="#ccc" />
                                 <XAxis dataKey="name" />
                                 <YAxis />
@@ -219,7 +219,7 @@ class OldCharts extends React.Component {
                 <Col>
                     <ResponsiveContainer width="99%"  height={200}>
                         <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data}>
-                            <Line type="monotone" dataKey="Confrimed" stroke="Blue" />
+                            <Line dot={false} type="monotone" dataKey="Confrimed" stroke="Blue" />
                             <CartesianGrid stroke="#ccc" />
                             <XAxis dataKey="name" />
                             <YAxis />
@@ -233,7 +233,7 @@ class OldCharts extends React.Component {
                 <Col>
                     <ResponsiveContainer width="99%"  height={200}>
                         <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data}>
-                            <Line type="monotone" dataKey="Recovered" stroke="Green" />
+                            <Line dot={false} type="monotone" dataKey="Recovered" stroke="Green" />
                             <CartesianGrid stroke="#ccc" />
                             <XAxis dataKey="name" />
                             <YAxis />
@@ -247,7 +247,7 @@ class OldCharts extends React.Component {
                 <Col>
                     <ResponsiveContainer width="99%"  height={200}>
                         <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data}>
-                            <Line type="monotone" dataKey="Deaths" stroke="darkred" />
+                            <Line dot={false} type="monotone" dataKey="Deaths" stroke="darkred" />
                             <CartesianGrid stroke="#ccc" />
                             <XAxis dataKey="name" />
                             <YAxis />
@@ -261,7 +261,7 @@ class OldCharts extends React.Component {
                 <Col>
                     <ResponsiveContainer width="99%"  height={200}>
                     <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data}>
-                        <Line type="monotone" dataKey="Confrimed Per Day" stroke="Blue" />
+                        <Line dot={false} type="monotone" dataKey="Confrimed Per Day" stroke="Blue" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis />
@@ -275,7 +275,7 @@ class OldCharts extends React.Component {
                 <Col>
                     <ResponsiveContainer width="99%"  height={200}>
                     <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data}>
-                        <Line type="monotone" dataKey="Recovered Per Day" stroke="Green" />
+                        <Line dot={false} type="monotone" dataKey="Recovered Per Day" stroke="Green" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis />
@@ -289,7 +289,7 @@ class OldCharts extends React.Component {
                 <Col>
                     <ResponsiveContainer width="99%"  height={200}>
                     <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data}>
-                        <Line type="monotone" dataKey="Deaths Per Day" stroke="red" />
+                        <Line dot={false} type="monotone" dataKey="Deaths Per Day" stroke="red" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis />
@@ -313,8 +313,8 @@ class OldCharts extends React.Component {
                 <Col>
                     <ResponsiveContainer width="99%"  height={200}>
                     <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data} >
-                        <Line type="monotone" dataKey="Confrimed" stroke="Blue" strokeDasharray="5 5" />
-                        <Line type="monotone" dataKey="Confrimed False" stroke="Blue" />
+                        <Line dot={false} type="monotone" dataKey="Confrimed" stroke="Blue" strokeDasharray="5 5" />
+                        <Line dot={false} type="monotone" dataKey="Confrimed False" stroke="Blue" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis />
@@ -328,8 +328,8 @@ class OldCharts extends React.Component {
                 <Col>
                     <ResponsiveContainer width="99%"  height={200}>
                     <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data} >
-                        <Line type="monotone" dataKey="Recovered" stroke="Green" strokeDasharray="5 5" />
-                        <Line type="monotone" dataKey="Recovered False" stroke="Green" />
+                        <Line dot={false} type="monotone" dataKey="Recovered" stroke="Green" strokeDasharray="5 5" />
+                        <Line dot={false} type="monotone" dataKey="Recovered False" stroke="Green" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis />
@@ -343,8 +343,8 @@ class OldCharts extends React.Component {
                 <Col>
                     <ResponsiveContainer width="99%"  height={200}>
                     <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data} >
-                        <Line type="monotone" dataKey="Deaths" stroke="darkred" strokeDasharray="5 5" />
-                        <Line type="monotone" dataKey="Deaths False" stroke="darkred" />
+                        <Line dot={false} type="monotone" dataKey="Deaths" stroke="darkred" strokeDasharray="5 5" />
+                        <Line dot={false} type="monotone" dataKey="Deaths False" stroke="darkred" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis />
@@ -363,8 +363,8 @@ class OldCharts extends React.Component {
                 <Col>
                     <ResponsiveContainer width="99%"  height={200}>
                         <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data}>
-                            <Line type="monotone" dataKey="Confrimed Per Day False" stroke="Blue" />
-                            <Line type="monotone" dataKey="Confrimed Per Day" stroke="Blue" strokeDasharray="5 5" />
+                            <Line dot={false} type="monotone" dataKey="Confrimed Per Day False" stroke="Blue" />
+                            <Line dot={false} type="monotone" dataKey="Confrimed Per Day" stroke="Blue" strokeDasharray="5 5" />
                             <CartesianGrid stroke="#ccc" />
                             <XAxis dataKey="name" />
                             <YAxis />
@@ -378,8 +378,8 @@ class OldCharts extends React.Component {
                 <Col>
                     <ResponsiveContainer width="99%"  height={200}>
                         <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data}>
-                            <Line type="monotone" dataKey="Recovered Per Day False" stroke="Green" />
-                            <Line type="monotone" dataKey="Recovered Per Day" stroke="Green" strokeDasharray="5 5" />
+                            <Line dot={false} type="monotone" dataKey="Recovered Per Day False" stroke="Green" />
+                            <Line dot={false} type="monotone" dataKey="Recovered Per Day" stroke="Green" strokeDasharray="5 5" />
                             <CartesianGrid stroke="#ccc" />
                             <XAxis dataKey="name" />
                             <YAxis />
@@ -393,8 +393,8 @@ class OldCharts extends React.Component {
                 <Col>
                     <ResponsiveContainer width="99%"  height={200}>
                         <LineChart width={window.innerWidth*0.4} height={200} data={this.state.data}>
-                            <Line type="monotone" dataKey="Deaths Per Day False" stroke="red" />
-                            <Line type="monotone" dataKey="Deaths Per Day" stroke="red" strokeDasharray="5 5" />
+                            <Line dot={false} type="monotone" dataKey="Deaths Per Day False" stroke="red" />
+                            <Line dot={false} type="monotone" dataKey="Deaths Per Day" stroke="red" strokeDasharray="5 5" />
                             <CartesianGrid stroke="#ccc" />
                             <XAxis dataKey="name" />
                             <YAxis />

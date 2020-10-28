@@ -31,6 +31,9 @@ export default function Home(){
             <Grid item lg={12}>
                 <Button  variant="contained"onClick={() => history.push("/US")}>US Charts</Button>
             </Grid>
+            <Grid item lg={12}>
+                <Button  variant="contained"onClick={() => history.push("/CompareCountries")}>Compare Countries</Button>
+            </Grid>
         </Grid>
     </div>
 }

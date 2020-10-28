@@ -118,7 +118,7 @@ export default function WorldCharts(){
             <Grid item lg={12} style={{ minWidth: '95%' }}>
                 <ResponsiveContainer height={window.innerHeight*0.3}>
                     <LineChart width={window.innerWidth*0.4} data={data}margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
-                        <Line type="monotone" dataKey="Confrimed" stroke="Blue" />
+                        <Line dot={false} type="monotone" dataKey="Confrimed" stroke="Blue" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis  tickFormatter={tick => {
@@ -137,7 +137,7 @@ export default function WorldCharts(){
             <Grid item lg={12} style={{ minWidth: '95%' }}>
                 <ResponsiveContainer height={window.innerHeight*0.3} margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
                     <LineChart width={window.innerWidth*0.4} data={data}>
-                        <Line type="monotone" dataKey="Confrimed Per Day" stroke="Blue" />
+                        <Line dot={false} type="monotone" dataKey="Confrimed Per Day" stroke="Blue" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis  tickFormatter={tick => {
@@ -156,7 +156,7 @@ export default function WorldCharts(){
             <Grid item lg={12} style={{ minWidth: '95%' }}>
                 <ResponsiveContainer height={window.innerHeight*0.3}>
                     <LineChart width={window.innerWidth*0.4} data={data} margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
-                        <Line type="monotone" dataKey="Deaths" stroke="darkred" />
+                        <Line dot={false} type="monotone" dataKey="Deaths" stroke="darkred" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis tickFormatter={tick => {
@@ -175,7 +175,7 @@ export default function WorldCharts(){
             <Grid item lg={12} style={{ minWidth: '95%' }}>
                 <ResponsiveContainer height={window.innerHeight*0.3} margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
                     <LineChart width={window.innerWidth*0.4} data={data}>
-                        <Line type="monotone" dataKey="Deaths Per Day" stroke="darkred" />
+                        <Line dot={false} type="monotone" dataKey="Deaths Per Day" stroke="darkred" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis tickFormatter={tick => {
@@ -194,7 +194,7 @@ export default function WorldCharts(){
             <Grid item lg={12} style={{ minWidth: '95%' }}>
                 <ResponsiveContainer height={window.innerHeight*0.3} >
                     <LineChart width={window.innerWidth*0.4} data={data} margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
-                        <Line type="monotone" dataKey="Recovered" stroke="Green" />
+                        <Line dot={false} type="monotone" dataKey="Recovered" stroke="Green" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis tickFormatter={tick => {
@@ -213,7 +213,7 @@ export default function WorldCharts(){
             <Grid item lg={12} style={{ minWidth: '95%' }}>
                 <ResponsiveContainer height={window.innerHeight*0.3} margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
                     <LineChart width={window.innerWidth*0.4} data={data}>
-                        <Line type="monotone" dataKey="Recovered Per Day" stroke="Green" />
+                        <Line dot={false} type="monotone" dataKey="Recovered Per Day" stroke="Green" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis tickFormatter={tick => {
