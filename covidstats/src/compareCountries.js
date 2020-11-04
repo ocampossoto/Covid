@@ -1,16 +1,17 @@
-    import React from 'react';
-    import Tabs from '@material-ui/core/Tabs';
-    import Tab from '@material-ui/core/Tab';
-    import Box from '@material-ui/core/Box';
-    import PropTypes from 'prop-types';
-    import Autocomplete from '@material-ui/lab/Autocomplete';
-    import TextField from '@material-ui/core/TextField';
-    import {DatePicker} from '@material-ui/pickers';
-    import { LineChart, Line, CartesianGrid, XAxis, YAxis,Tooltip,Legend, ResponsiveContainer} from 'recharts';
-import { Grid } from '@material-ui/core';
+import React from 'react';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Box from '@material-ui/core/Box';
+import PropTypes from 'prop-types';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import TextField from '@material-ui/core/TextField';
+import {DatePicker} from '@material-ui/pickers';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis,Tooltip,Legend, ResponsiveContainer, Bar, ComposedChart, Cell} from 'recharts';
+import { Grid, Typography } from '@material-ui/core';
+
     function TabPanel(props) {
         const { children, value, index, ...other } = props;
-      
+
         return (
           <div
             role="tabpanel"
@@ -27,7 +28,7 @@ import { Grid } from '@material-ui/core';
           </div>
         );
     }
-      
+
     TabPanel.propTypes = {
         children: PropTypes.node,
         index: PropTypes.any.isRequired,
@@ -68,7 +69,8 @@ import { Grid } from '@material-ui/core';
         </div>
     );
     };
-    const included = ["US", "India","Bazil","Russia"]
+    const included = ["US", "India","Brazil","Russia"];
+    const top10Countries = ["US", "India","Brazil","Russia", "France","Spain", "United Kingdom", "Mexico"];
     export default function CompareCountries(){
         const [value, setValue] = React.useState(0);
         const handleChange = (event, newValue) => {
@@ -87,10 +89,12 @@ import { Grid } from '@material-ui/core';
         const defaultStart = new Date().setMonth(new Date().getMonth()-6);
         const [startDate, setStartDate] = React.useState(defaultStart);
         const [endDate, setEndDate] = React.useState(currenDate);
-        
+        const [totalConfirmed, setTotalConfirmed] = React.useState([]);
+        const [totalDeaths, setTotalDeaths] = React.useState([]);
+        const [totalRecovered, setTotalRecovered] = React.useState([]);
         React.useEffect(() =>{
             var url = "https://pomber.github.io/covid19/timeseries.json";
-            fetch(url).then(res=> res.json()).then((result)=>{  
+            fetch(url).then(res=> res.json()).then((result)=>{
             var keys = Object.keys(result);
             var tempCountries = []
             keys.forEach(element => {
@@ -98,7 +102,7 @@ import { Grid } from '@material-ui/core';
             })
             setAllData(result);
             setKeys(keys);
-            
+
             })
         },[]);
         React.useEffect(()=>{
@@ -126,11 +130,11 @@ import { Grid } from '@material-ui/core';
                                     elementConfirmed["date"] = date;
                                     elementConfirmed[key] = tempData.confirmed;
                                     confirmedArray.push(elementConfirmed);
-                                   
+
                                 }
                                 else{
                                     confirmedArray[idConfirmed][key] = tempData.confirmed;
-                                } 
+                                }
                                 if(idDeaths === -1){
                                     var elementDeath= {};
                                     elementDeath["date"] = date;
@@ -139,7 +143,7 @@ import { Grid } from '@material-ui/core';
                                 }
                                 else{
                                     deathArray[idDeaths][key] = tempData.deaths;
-                                }                 
+                                }
                                 if(idRecovery === -1){
                                     var elementRecoverd= {};
                                     elementRecoverd["date"] = date;
@@ -148,7 +152,7 @@ import { Grid } from '@material-ui/core';
                                 }
                                 else{
                                     recoveredArray[idDeaths][key] = tempData.recovered;
-                                }                                       
+                                }
                              }
                          }
                     }
@@ -212,7 +216,68 @@ import { Grid } from '@material-ui/core';
             setDeathsData(deathArray);
             setRecoveredData(recoveredArray);
 
+            var tempC = [];
+            var tempD = [];
+            var tempR = [];
+            if(confirmedArray.length > 0){
+                for (const [key, valuec] of Object.entries(confirmedArray[confirmedArray.length-1])) {
+                    if(key !== "date")
+                    {
+                        tempC.push({name: key, confirmed: valuec});
+                    }
+                }
+                tempC = tempC.sort((a,b) =>
+                {
+                    if(isFinite(b.confirmed-a.confirmed)){
+                        return b.confirmed-a.confirmed;
+                    }
+                    else{
+                        return isFinite(a) ? 1 : -1;
+                    }
+                 })
+            }
+            if(deathArray.length > 0){
+                for (const [key, valuec] of Object.entries(deathArray[deathArray.length-1])) {
+                    if(key !== "date")
+                    {
+                        tempD.push({name: key, deaths: valuec});
+                    }
+                }
+                tempD = tempD.sort((a,b) => {
+                    if(isFinite(b.deaths-a.deaths)){
+                        return b.deaths-a.deaths;
+                    }
+                    else{
+                        return isFinite(a) ? 1 : -1;
+                    }
+                 })
+            }
+            if(recoveredArray.length > 0){
+                for (const [key, valuec] of Object.entries(recoveredArray[recoveredArray.length-1])) {
+                    if(key !== "date")
+                    {
+                        tempR.push({name: key, recovered: valuec});
+                    }
+                }
+                tempR = tempR.sort((a,b) => {
+                    if(isFinite(b.recovered-a.recovered)){
+                        return b.recovered-a.recovered;
+                    }
+                    else{
+                        return isFinite(a) ? 1 : -1;
+                    }
+                 })
+            }
+            setTotalConfirmed(tempC);
+            setTotalDeaths(tempD);
+            setTotalRecovered(tempR);
         },[allData,startDate, endDate,include])
+        React.useEffect(()=>{
+            if(value === 3){
+                setInclude(top10Countries);
+            }
+        },[value]);
+
         return <div>
             <Grid container justify="center" spacing={3} align="center">
                 <Grid item lg={12} style={{ minWidth: '95%' }}>
@@ -225,12 +290,15 @@ import { Grid } from '@material-ui/core';
                         renderInput={(params) => <TextField {...params} label="Included Country" variant="outlined" />}
                     />
                 </Grid>
-                <Grid item lg={6}>
-                    <DatePicker animateYearScrolling value={startDate} onChange={setStartDate} label="Start Date" minDate={new Date("2019-12-2")} variant="inline" inputVariant="outlined"/>
-                </Grid>
-                <Grid item lg={6}>
-                    <DatePicker animateYearScrolling value={endDate} onChange={setEndDate} label="End Date" minDate={new Date("2019-12-2")} variant="inline" inputVariant="outlined"/>
-                </Grid>
+                {value !== 3?<>
+                    <Grid item lg={6}>
+                        <DatePicker animateYearScrolling value={startDate} onChange={setStartDate} label="Start Date" minDate={new Date("2019-12-2")} variant="inline" inputVariant="outlined"/>
+                    </Grid>
+                    <Grid item lg={6}>
+                        <DatePicker animateYearScrolling value={endDate} onChange={setEndDate} label="End Date" minDate={new Date("2019-12-2")} variant="inline" inputVariant="outlined"/>
+                    </Grid>
+                    </>
+                : null}
             </Grid>
             <Tabs
                 value={value}
@@ -243,10 +311,11 @@ import { Grid } from '@material-ui/core';
             <Tab label="Cases" {...a11yProps(0)}/>
             <Tab label="Deaths" {...a11yProps(1)} />
             <Tab label="Recovery"{...a11yProps(2)} />
+            <Tab label="Totals"{...a11yProps(3)} />
             </Tabs>
             {/* Cases */}
             <TabPanel value={value} index={0}>
-                <ResponsiveContainer height={window.innerHeight*0.3}>
+                <ResponsiveContainer height={window.innerHeight*0.7}>
                     <LineChart width={window.innerWidth*0.4} data={confiremedData}margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
                         {include.map((k) =>
                             <Line type="monotone" dot={false} dataKey={k} stroke={getRandomColor()} />
@@ -260,7 +329,7 @@ import { Grid } from '@material-ui/core';
                         <Legend/>
                     </LineChart>
                 </ResponsiveContainer>
-                <ResponsiveContainer height={window.innerHeight*0.3}>
+                <ResponsiveContainer height={window.innerHeight*0.7}>
                     <LineChart width={window.innerWidth*0.4} data={confiremedPerDayData}margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
                         {include.map((k) =>
                             <Line dot={false} type="monotone" dataKey={k} stroke={getRandomColor()} />
@@ -298,7 +367,7 @@ import { Grid } from '@material-ui/core';
                         )}
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="date" />
-                        <YAxis  tickFormatter={tick => {
+                        <YAxis tickFormatter={tick => {
                                 return tick.toLocaleString();
                                 }}/>
                         <Tooltip  content={<CustomToolTip />}/>
@@ -336,6 +405,67 @@ import { Grid } from '@material-ui/core';
                         <Legend/>
                     </LineChart>
                 </ResponsiveContainer>
+            </TabPanel>
+            <TabPanel value={value} index={3}>
+                <Grid container justify="center" spacing={3} align="center">
+                    <Grid item lg={12} md={12} sm={12}>
+                        <Typography variant="h5">Confirmed</Typography>
+                    </Grid>
+                        <ResponsiveContainer height={window.innerHeight*0.3}>
+                            <ComposedChart layout="vertical"  data={totalConfirmed} margin={{right: 16,left: 24,}} >
+                                <CartesianGrid stroke="#f5f5f5" />
+                                <XAxis type="number"/>
+                                <YAxis dataKey="name" type="category" />
+                                <Tooltip />
+                                <Bar type="monotone" dataKey="confirmed">
+                                    {
+                                        totalConfirmed.map((entry, index) => {
+                                            const color = getRandomColor();
+                                            return <Cell fill={color} />;
+                                        })
+                                    }
+                                </Bar>
+                            </ComposedChart>
+                        </ResponsiveContainer>
+                    <Grid item>
+                        <Typography variant="h5">Deaths</Typography>
+                    </Grid>
+                        <ResponsiveContainer height={window.innerHeight*0.3}>
+                            <ComposedChart layout="vertical" data={totalDeaths} margin={{right: 16,left: 24}} >
+                                <CartesianGrid stroke="#f5f5f5" />
+                                <XAxis type="number"/>
+                                <YAxis  dataKey="name" type="category" />
+                                <Tooltip />
+                                <Bar type="monotone" dataKey="deaths">
+                                    {
+                                        totalDeaths.map((entry, index) => {
+                                            const color = getRandomColor();
+                                            return <Cell fill={color} />;
+                                        })
+                                    }
+                                </Bar>
+                            </ComposedChart>
+                        </ResponsiveContainer>
+                    <Grid item lg={12} md={12} sm={12}>
+                        <Typography variant="h5">Recovered</Typography>
+                    </Grid>
+                        <ResponsiveContainer height={window.innerHeight*0.3}>
+                            <ComposedChart layout="vertical" data={totalRecovered} margin={{right: 16,left: 24}} >
+                                <CartesianGrid stroke="#f5f5f5" />
+                                <XAxis type="number" />
+                                <YAxis  dataKey="name" type="category" />
+                                <Tooltip />
+                                <Bar type="monotone" dataKey="recovered">
+                                    {
+                                        totalRecovered.map((entry, index) => {
+                                            const color = getRandomColor();
+                                            return <Cell fill={color} />;
+                                        })
+                                    }
+                                </Bar>
+                            </ComposedChart>
+                        </ResponsiveContainer>
+                </Grid>
             </TabPanel>
         </div>
     }

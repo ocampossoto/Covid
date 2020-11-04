@@ -11,8 +11,8 @@ export default function CoungryGraphs(props){
             </Typography>
         </Grid>
         <Grid item lg={12} style={{ minWidth: '95%' }}>
-        <ResponsiveContainer height={window.innerHeight*0.3}>
-                    <LineChart width={window.innerWidth*0.4} data={props.data}margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
+        <ResponsiveContainer height={window.innerHeight*0.5}>
+                    <LineChart width={window.innerWidth*0.5} data={props.data}margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
                     <Line dot={false} type="monotone" dataKey={props.item.name} stroke={props.item.color} />
                     <CartesianGrid stroke="#ccc" />
                     <XAxis dataKey="name" />

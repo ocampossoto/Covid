@@ -9,11 +9,26 @@ import TextField from '@material-ui/core/TextField';
 import CoungryGraphs from './CountryGraphs';
 import {DatePicker} from '@material-ui/pickers';
 import MUIDataTable from "mui-datatables";
+import { Bar, CartesianGrid, Cell, ComposedChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Grid, Typography } from '@material-ui/core';
 const datesAreOnSameDay = (first, second) =>
     first.getFullYear() === second.getFullYear() &&
     first.getMonth() === second.getMonth() &&
     first.getDate() === second.getDate();
-
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+const isToday = (someDate) => {
+    const today = new Date()
+    return someDate.getDate() === today.getDate() &&
+        someDate.getMonth() === today.getMonth() &&
+        someDate.getFullYear() === today.getFullYear()
+}
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   
@@ -54,7 +69,7 @@ function a11yProps(index) {
       'aria-controls': `scrollable-auto-tabpanel-${index}`,
     };
   }
-
+const topStates = ["Texas", "California", "Florida", "New York", "Illinois"]
 export default function USView(){
     const [value, setValue] = React.useState(3);
     const handleChange = (event, newValue) => {
@@ -73,6 +88,10 @@ export default function USView(){
     const defaultStart = new Date().setMonth(new Date().getMonth()-6);
     const [startUSGraphDate, setStartUSGraphDate] = React.useState(defaultStart);
     const [endUSGraphDate, setEndUSGraphDate] = React.useState(currenDate);
+    const [include, setInclude] = React.useState(topStates);
+    const [confirmedToday, setConfirmedToday] = React.useState([]);
+    const [deathsToday, setDeathsToday] = React.useState([]);
+    const [recoveredToday, setRecoveredToday] = React.useState([]);
     React.useEffect(()=>{
         var url = "https://firebasestorage.googleapis.com/v0/b/frcscout-6d1d3.appspot.com/o/covid%2FCovidData.json?alt=media&token=743d535c-3eb2-49f8-8579-8f93589d076e";
         fetch(url).then(res=> res.json()).then((result)=>{  
@@ -124,14 +143,6 @@ export default function USView(){
             for(var day in allData[keys[i]]){
                 var date = new Date(day);
                 if(datesAreOnSameDay(date, new Date(Date.now()))){
-                    ///Old Stuff
-                    // element = allData[keys[i]][day];
-                    // element['state'] = keys[i]; 
-                    // element["Recovered"] = element['Recovered'] !== "" ? parseInt(element['Recovered'], 10) : 0 ;
-                    // element["Confirmed"] = element['Confirmed'] !== "" ? parseInt(element['Confirmed'], 10) : 0 ;
-                    // element["Deaths"] = element['Deaths'] !== "" ? parseInt(element['Deaths'], 10) : 0 ;
-                    // element['Testing_Rate'] = element['Testing_Rate'] !=="" ? parseFloat(element['Testing_Rate']).toFixed(3): 0.00;
-                    // element['Mortality_Rate'] = element['Mortality_Rate'] !=="" ? parseFloat(element['Mortality_Rate']).toFixed(3): 0.00;
                     var tempElement = allData[keys[i]][day];
                     element = [
                         keys[i],
@@ -228,6 +239,55 @@ export default function USView(){
         };
         setUSTableData(finalResults);
     },[allData, keys])
+    React.useEffect(()=>{
+        if(value === 4){
+            var confirmed = [];
+            var deaths = [];
+            var recovered = [];
+            for (const [key, value] of Object.entries(allData)) {
+                if(include.includes(key)){
+                   for(var [key1, value1] of Object.entries(value)){
+                       var tempData = new Date(key1);
+                       if(isToday(tempData)){
+                            confirmed.push({state: key, confirmed: parseInt(value1.Confirmed, 10)});
+                            deaths.push({state: key, deaths: parseInt(value1.Deaths, 10)});
+                            recovered.push({state: key, recovered: parseInt(value1.Recovered, 10)});
+                       }
+                   }
+                }
+            }
+            confirmed = confirmed.sort((a,b) =>
+            {
+                if(isFinite(b.confirmed-a.confirmed)){
+                    return b.confirmed-a.confirmed;
+                }
+                else{
+                    return isFinite(a) ? 1 : -1;
+                }
+             })
+            deaths = deaths.sort((a,b) =>
+            {
+                if(isFinite(b.deaths-a.deaths)){
+                    return b.deaths-a.deaths;
+                }
+                else{
+                    return isFinite(a) ? 1 : -1;
+                }
+             })
+            recovered = recovered.sort((a,b) =>
+            {
+                if(isFinite(b.recovered-a.recovered)){
+                    return b.recovered-a.recovered;
+                }
+                else{
+                    return isFinite(a) ? 1 : -1;
+                }
+             })
+            setConfirmedToday(confirmed);
+            setDeathsToday(deaths);
+            setRecoveredToday(recovered)
+        }
+    },[value, include,allData])
     const totalColumns =  [ 
         { name: 'Date', label: 'Date'},
         { name: 'Recovered', label: 'Recovered'},
@@ -269,6 +329,7 @@ export default function USView(){
         <Tab label="Graph State" {...a11yProps(1)} />
         <Tab label="Table Totals"{...a11yProps(2)} />
         <Tab label="Graph Totals"{...a11yProps(3)} />
+        <Tab label="Compare States"{...a11yProps(4)} />
         </Tabs>
         <TabPanel value={value} index={0}>
             <MUIDataTable
@@ -316,6 +377,77 @@ export default function USView(){
                 <CoungryGraphs keys={keys} key={item.name} data={cumulative} item={item}/>)
             }
 
+        </TabPanel>
+        <TabPanel value={value} index={4}>
+            <Grid container justify="center" spacing={3} align="center">
+                <Grid item lg={12} md={12} sm={12}>
+                        <Autocomplete
+                        multiple
+                        options={keys}
+                        value={include}
+                        onChange={(e, val) =>{setInclude(val)}}
+                        renderInput={(params) => <TextField {...params} label="Included States" variant="outlined" />}
+                        style={{marginBottom:"2%"}}
+                    />
+                </Grid>
+                <Grid item lg={12} md={12} sm={12}>
+                        <Typography variant="h5">Confirmed</Typography>
+                    </Grid>
+                <ResponsiveContainer height={window.innerHeight*0.5}>
+                    <ComposedChart layout="vertical" data={confirmedToday} margin={{right: 16,left: 24}} >
+                        <CartesianGrid stroke="#f5f5f5" />
+                        <XAxis type="number" />
+                        <YAxis  dataKey="state" type="category" />
+                        <Tooltip />
+                        <Bar type="monotone" dataKey="confirmed">
+                            {
+                                include.map((entry, index) => {
+                                    const color = getRandomColor();
+                                    return <Cell fill={color} />;
+                                })
+                            }
+                        </Bar>
+                    </ComposedChart>
+                </ResponsiveContainer>
+                <Grid item lg={12} md={12} sm={12}>
+                        <Typography variant="h5">Deaths</Typography>
+                    </Grid>
+                <ResponsiveContainer height={window.innerHeight*0.5}>
+                    <ComposedChart layout="vertical" data={deathsToday} margin={{right: 16,left: 24}} >
+                        <CartesianGrid stroke="#f5f5f5" />
+                        <XAxis type="number" />
+                        <YAxis  dataKey="state" type="category" />
+                        <Tooltip />
+                        <Bar type="monotone" dataKey="deaths">
+                            {
+                                include.map((entry, index) => {
+                                    const color = getRandomColor();
+                                    return <Cell fill={color} />;
+                                })
+                            }
+                        </Bar>
+                    </ComposedChart>
+                </ResponsiveContainer>
+                <Grid item lg={12} md={12} sm={12}>
+                    <Typography variant="h5">Recovered</Typography>
+                </Grid>
+                <ResponsiveContainer height={window.innerHeight*0.5}>
+                    <ComposedChart layout="vertical" data={recoveredToday} margin={{right: 16,left: 24}} >
+                        <CartesianGrid stroke="#f5f5f5" />
+                        <XAxis type="number" />
+                        <YAxis  dataKey="state" type="category" />
+                        <Tooltip />
+                        <Bar type="monotone" dataKey="recovered">
+                            {
+                                include.map((entry, index) => {
+                                    const color = getRandomColor();
+                                    return <Cell fill={color} />;
+                                })
+                            }
+                        </Bar>
+                    </ComposedChart>
+                </ResponsiveContainer>
+            </Grid>
         </TabPanel>
     </div>
 }

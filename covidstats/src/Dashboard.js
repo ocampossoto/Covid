@@ -26,6 +26,7 @@ import {
   } from "react-router-dom";
 import WorldCharts from './WorldCharts';
 import USView from './USView';
+import CompareUSDeaths from './CompareUSDeaths';
 
 
 const drawerWidth = 240;
@@ -125,7 +126,7 @@ export default function Dashboard() {
     <div className={classes.root}>
       <CssBaseline />
       <Router>
-      <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
+      <AppBar className={clsx(classes.appBar, open && classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
@@ -198,8 +199,14 @@ export default function Dashboard() {
                             </Paper>
                         </Grid>
                     </Route>
+                    <Route exact path="/CompareUSDeaths">
+                        <Grid item xs={12} md={11} lg={11}>
+                            <Paper>
+                                <CompareUSDeaths/>
+                            </Paper>
+                        </Grid>
+                    </Route>
                 </Switch>
-           
           </Grid>
         </Container>
       </main>
