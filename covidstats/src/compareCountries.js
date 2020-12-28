@@ -285,7 +285,7 @@ import { Grid, Typography } from '@material-ui/core';
                         multiple
                         options={keys}
                         value={include}
-                        limitTags="3"
+                        limitTags={3}
                         onChange={(e, val) => setInclude(val)}
                         renderInput={(params) => <TextField {...params} label="Included Country" variant="outlined" />}
                     />
@@ -318,7 +318,7 @@ import { Grid, Typography } from '@material-ui/core';
                 <ResponsiveContainer height={window.innerHeight*0.7}>
                     <LineChart width={window.innerWidth*0.4} data={confiremedData}margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
                         {include.map((k) =>
-                            <Line type="monotone" dot={false} dataKey={k} stroke={getRandomColor()} />
+                            <Line key={k} type="monotone" dot={false} dataKey={k} stroke={getRandomColor()} />
                         )}
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="date" />
@@ -332,7 +332,7 @@ import { Grid, Typography } from '@material-ui/core';
                 <ResponsiveContainer height={window.innerHeight*0.7}>
                     <LineChart width={window.innerWidth*0.4} data={confiremedPerDayData}margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
                         {include.map((k) =>
-                            <Line dot={false} type="monotone" dataKey={k} stroke={getRandomColor()} />
+                            <Line key={k} dot={false} type="monotone" dataKey={k} stroke={getRandomColor()} />
                         )}
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="date" />
@@ -349,7 +349,7 @@ import { Grid, Typography } from '@material-ui/core';
                 <ResponsiveContainer height={window.innerHeight*0.3}>
                     <LineChart width={window.innerWidth*0.4} data={deathsData}margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
                         {include.map((k) =>
-                            <Line dot={false} type="monotone" dataKey={k} stroke={getRandomColor()} />
+                            <Line key={k} dot={false} type="monotone" dataKey={k} stroke={getRandomColor()} />
                         )}
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="date" />
@@ -363,7 +363,7 @@ import { Grid, Typography } from '@material-ui/core';
                 <ResponsiveContainer height={window.innerHeight*0.3}>
                     <LineChart width={window.innerWidth*0.4} data={deathsPerDayData}margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
                         {include.map((k) =>
-                            <Line dot={false} type="monotone" dataKey={k} stroke={getRandomColor()} />
+                            <Line key={k} dot={false} type="monotone" dataKey={k} stroke={getRandomColor()} />
                         )}
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="date" />
@@ -380,7 +380,7 @@ import { Grid, Typography } from '@material-ui/core';
             <ResponsiveContainer height={window.innerHeight*0.3}>
                     <LineChart width={window.innerWidth*0.4} data={recoveredData}margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
                         {include.map((k) =>
-                            <Line dot={false} type="monotone" dataKey={k} stroke={getRandomColor()} />
+                            <Line key={k} dot={false} type="monotone" dataKey={k} stroke={getRandomColor()} />
                         )}
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="date" />
@@ -394,7 +394,7 @@ import { Grid, Typography } from '@material-ui/core';
                 <ResponsiveContainer height={window.innerHeight*0.3}>
                     <LineChart width={window.innerWidth*0.4} data={recoveredPerDayData}margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
                         {include.map((k) =>
-                            <Line dot={false} type="monotone" dataKey={k} stroke={getRandomColor()} />
+                            <Line key={k} dot={false} type="monotone" dataKey={k} stroke={getRandomColor()} />
                         )}
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="date" />
@@ -421,7 +421,7 @@ import { Grid, Typography } from '@material-ui/core';
                                     {
                                         totalConfirmed.map((entry, index) => {
                                             const color = getRandomColor();
-                                            return <Cell fill={color} />;
+                                            return <Cell key={index} fill={color} />;
                                         })
                                     }
                                 </Bar>
@@ -440,7 +440,7 @@ import { Grid, Typography } from '@material-ui/core';
                                     {
                                         totalDeaths.map((entry, index) => {
                                             const color = getRandomColor();
-                                            return <Cell fill={color} />;
+                                            return <Cell key={index} fill={color} />;
                                         })
                                     }
                                 </Bar>
@@ -459,7 +459,7 @@ import { Grid, Typography } from '@material-ui/core';
                                     {
                                         totalRecovered.map((entry, index) => {
                                             const color = getRandomColor();
-                                            return <Cell fill={color} />;
+                                            return <Cell key={index} fill={color} />;
                                         })
                                     }
                                 </Bar>

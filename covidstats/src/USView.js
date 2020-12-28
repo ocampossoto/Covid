@@ -249,9 +249,26 @@ export default function USView(){
                    for(var [key1, value1] of Object.entries(value)){
                        var tempData = new Date(key1);
                        if(isToday(tempData)){
-                            confirmed.push({state: key, confirmed: parseInt(value1.Confirmed, 10)});
-                            deaths.push({state: key, deaths: parseInt(value1.Deaths, 10)});
-                            recovered.push({state: key, recovered: parseInt(value1.Recovered, 10)});
+                            if(value1.Deaths === ""){
+                                confirmed.push({state: key, confirmed: 0});
+                            }
+                            else{
+                                confirmed.push({state: key, confirmed: parseInt(value1.Confirmed, 10)});
+                            }
+                            if(value1.Deaths === ""){
+                                deaths.push({state: key, deaths: 0});
+                            }
+                            else{
+                                deaths.push({state: key, deaths: parseInt(value1.Deaths, 10)});
+                            }
+                            if(value1.Recovered === ""){
+                                recovered.push({state: key, recovered: 0});
+                            }
+                            else{
+                                recovered.push({state: key, recovered: parseFloat(value1.Recovered)});
+                            }
+
+                            
                        }
                    }
                 }
@@ -394,7 +411,7 @@ export default function USView(){
                         <Typography variant="h5">Confirmed</Typography>
                     </Grid>
                 <ResponsiveContainer height={window.innerHeight*0.5}>
-                    <ComposedChart layout="vertical" data={confirmedToday} margin={{right: 16,left: 24}} >
+                    <ComposedChart layout="vertical" data={confirmedToday} margin={{right: 16}} >
                         <CartesianGrid stroke="#f5f5f5" />
                         <XAxis type="number" />
                         <YAxis  dataKey="state" type="category" />
@@ -403,7 +420,7 @@ export default function USView(){
                             {
                                 include.map((entry, index) => {
                                     const color = getRandomColor();
-                                    return <Cell fill={color} />;
+                                    return <Cell key={index} fill={color} />;
                                 })
                             }
                         </Bar>
@@ -413,7 +430,7 @@ export default function USView(){
                         <Typography variant="h5">Deaths</Typography>
                     </Grid>
                 <ResponsiveContainer height={window.innerHeight*0.5}>
-                    <ComposedChart layout="vertical" data={deathsToday} margin={{right: 16,left: 24}} >
+                    <ComposedChart layout="vertical" data={deathsToday} margin={{right: 16}} >
                         <CartesianGrid stroke="#f5f5f5" />
                         <XAxis type="number" />
                         <YAxis  dataKey="state" type="category" />
@@ -422,7 +439,7 @@ export default function USView(){
                             {
                                 include.map((entry, index) => {
                                     const color = getRandomColor();
-                                    return <Cell fill={color} />;
+                                    return <Cell key={index} fill={color} />;
                                 })
                             }
                         </Bar>
@@ -432,7 +449,7 @@ export default function USView(){
                     <Typography variant="h5">Recovered</Typography>
                 </Grid>
                 <ResponsiveContainer height={window.innerHeight*0.5}>
-                    <ComposedChart layout="vertical" data={recoveredToday} margin={{right: 16,left: 24}} >
+                    <ComposedChart layout="vertical" data={recoveredToday} margin={{right: 16}} >
                         <CartesianGrid stroke="#f5f5f5" />
                         <XAxis type="number" />
                         <YAxis  dataKey="state" type="category" />
@@ -441,7 +458,7 @@ export default function USView(){
                             {
                                 include.map((entry, index) => {
                                     const color = getRandomColor();
-                                    return <Cell fill={color} />;
+                                    return <Cell key={index} fill={color} />;
                                 })
                             }
                         </Bar>

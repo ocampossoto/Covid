@@ -3,8 +3,12 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import {useHistory} from "react-router-dom";
 import { Button } from '@material-ui/core';
+import InstallPWA from './InstalPWA';
+
+
 export default function Home(){
     const history = useHistory();
+
     return <div>
         <Grid container justify="center" spacing={2} align="center" width="90%">
             <Grid item style={{marginRigh: "2%"}}>
@@ -33,6 +37,9 @@ export default function Home(){
             </Grid>
             <Grid item lg={12}>
                 <Button  variant="contained"onClick={() => history.push("/CompareCountries")}>Compare Countries</Button>
+            </Grid>
+            <Grid item lg={12} style={{marginTop: "5%"}}>
+                <InstallPWA/>
             </Grid>
         </Grid>
     </div>
