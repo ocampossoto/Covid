@@ -1,6 +1,7 @@
 {
   "short_name": "Covid Graphs",
-  "name": "Covid Graphs in a PWA",
+  "name": "Covid Graphs",
+  "description": "Covid Graphs in a PWA",
   "icons": [
     {
       "src": "icons/manifest-icon-192.png",
