@@ -35,7 +35,11 @@ jobs:
       with:
         name: files
         # A file, directory or wildcard pattern that describes what to upload
-        path: covidstats
+        path: covidstats/build
+          covidstats/package.json
+          covidstats/firebase.json
+          covidstats/.firebaserc
+          !**/node_modules/**
         retention-days: 2
   deploy:
     name: Deploy
