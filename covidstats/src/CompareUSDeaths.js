@@ -37,6 +37,21 @@ const CustomToolTip = props => {
         </div>
     );
     };
+function convert(valueOrigin){
+    var value = Math.abs(valueOrigin);
+    if(value>=1000000)
+    {
+        value=(valueOrigin/1000000)+"M"
+    }
+    else if(value>=1000)
+    {
+        value=(valueOrigin/1000)+"K";
+    }
+    else{
+        value = valueOrigin;
+    }
+    return value;
+}
 export default function CompareUSDeaths(){
     const [data, setData] = React.useState([]);
     React.useEffect(() =>{
@@ -68,15 +83,13 @@ export default function CompareUSDeaths(){
         </Typography>
         <ResponsiveContainer height={window.innerHeight*0.7}>
         <BarChart
-        width={1000}
+        width={1}
         data={data}
-        margin={{
-          top: 5, right: 30, left: 20, bottom: 5,
-        }}
+       
       >
         <XAxis dataKey="name" />
         <YAxis domain={[0, 700000]}tickFormatter={tick => {
-            return tick.toLocaleString();
+            return convert(tick);
         }}/>
         <Tooltip  content={<CustomToolTip />}/>
         {/* <Legend /> */}
@@ -84,7 +97,7 @@ export default function CompareUSDeaths(){
         {
           	data?.map((entry, index) => {
             	const color = getRandomColor();
-            	return <Cell fill={color}></Cell>;
+            	return <Cell key={index} fill={color}></Cell>;
             })
           }    
         </Bar>

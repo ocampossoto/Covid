@@ -28,7 +28,21 @@ const CustomToolTip = props => {
       </div>
     );
   };
-
+function convert(valueOrigin){
+    var value = Math.abs(valueOrigin);
+    if(value>=1000000)
+    {
+        value=(valueOrigin/1000000)+"M"
+    }
+    else if(value>=1000)
+    {
+        value=(valueOrigin/1000)+"K";
+    }
+    else{
+        value = valueOrigin;
+    }
+    return value;
+}
 export default function WorldCharts(){
     const [allData, setAllData] = React.useState([]);
     const [keys, setKeys] = React.useState([]);
@@ -117,12 +131,12 @@ export default function WorldCharts(){
             </Grid>
             <Grid item lg={12} style={{ minWidth: '95%' }}>
                 <ResponsiveContainer height={window.innerHeight*0.3}>
-                    <LineChart width={window.innerWidth*0.4} data={data}margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
+                    <LineChart width={window.innerWidth*0.4} data={data}margin={{top: 16,right: 16,bottom: 0}}>
                         <Line dot={false} type="monotone" dataKey="Confrimed" stroke="Blue" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis  tickFormatter={tick => {
-                                return tick.toLocaleString();
+                                return convert(tick);
                                 }}/>
                         <Tooltip  content={<CustomToolTip />}/>
                         <Legend />
@@ -135,13 +149,13 @@ export default function WorldCharts(){
                 </Typography>
             </Grid>
             <Grid item lg={12} style={{ minWidth: '95%' }}>
-                <ResponsiveContainer height={window.innerHeight*0.3} margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
+                <ResponsiveContainer height={window.innerHeight*0.3} margin={{top: 16,right: 16,bottom: 0}}>
                     <LineChart width={window.innerWidth*0.4} data={data}>
                         <Line dot={false} type="monotone" dataKey="Confrimed Per Day" stroke="Blue" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis  tickFormatter={tick => {
-                                return tick.toLocaleString();
+                                return convert(tick);
                                 }}/>
                         <Tooltip  content={<CustomToolTip />}/>
                         <Legend />
@@ -155,12 +169,12 @@ export default function WorldCharts(){
             </Grid>
             <Grid item lg={12} style={{ minWidth: '95%' }}>
                 <ResponsiveContainer height={window.innerHeight*0.3}>
-                    <LineChart width={window.innerWidth*0.4} data={data} margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
+                    <LineChart width={window.innerWidth*0.4} data={data} margin={{top: 16,right: 16,bottom: 0}}>
                         <Line dot={false} type="monotone" dataKey="Deaths" stroke="darkred" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis tickFormatter={tick => {
-                                return tick.toLocaleString();
+                                return convert(tick);
                                 }}/>
                         <Tooltip content={<CustomToolTip/>} />
                         <Legend />
@@ -173,13 +187,13 @@ export default function WorldCharts(){
                 </Typography>
             </Grid>
             <Grid item lg={12} style={{ minWidth: '95%' }}>
-                <ResponsiveContainer height={window.innerHeight*0.3} margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
+                <ResponsiveContainer height={window.innerHeight*0.3} margin={{top: 16,right: 16,bottom: 0}}>
                     <LineChart width={window.innerWidth*0.4} data={data}>
                         <Line dot={false} type="monotone" dataKey="Deaths Per Day" stroke="darkred" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis tickFormatter={tick => {
-                                return tick.toLocaleString();
+                                return convert(tick);
                                 }}/>
                         <Tooltip content={<CustomToolTip/>} />
                         <Legend />
@@ -193,12 +207,12 @@ export default function WorldCharts(){
             </Grid>
             <Grid item lg={12} style={{ minWidth: '95%' }}>
                 <ResponsiveContainer height={window.innerHeight*0.3} >
-                    <LineChart width={window.innerWidth*0.4} data={data} margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
+                    <LineChart width={window.innerWidth*0.4} data={data} margin={{top: 16,right: 16,bottom: 0}}>
                         <Line dot={false} type="monotone" dataKey="Recovered" stroke="Green" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis tickFormatter={tick => {
-                                return tick.toLocaleString();
+                                return convert(tick);
                                 }}/>
                         <Tooltip content={<CustomToolTip/>} />
                         <Legend />
@@ -211,13 +225,13 @@ export default function WorldCharts(){
                 </Typography>
             </Grid>
             <Grid item lg={12} style={{ minWidth: '95%' }}>
-                <ResponsiveContainer height={window.innerHeight*0.3} margin={{top: 16,right: 16,bottom: 0,left: 24,}}>
+                <ResponsiveContainer height={window.innerHeight*0.3} margin={{top: 16,right: 16,bottom: 0}}>
                     <LineChart width={window.innerWidth*0.4} data={data}>
                         <Line dot={false} type="monotone" dataKey="Recovered Per Day" stroke="Green" />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis dataKey="name" />
                         <YAxis tickFormatter={tick => {
-                                return tick.toLocaleString();
+                                return convert(tick);
                                 }}/>
                         <Tooltip content={<CustomToolTip/>} />
                         <Legend />
