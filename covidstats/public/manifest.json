@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Covid Graphs",
+  "name": "Covid Graphs in a PWA",
   "icons": [
     {
       "src": "icons/manifest-icon-192.png",
