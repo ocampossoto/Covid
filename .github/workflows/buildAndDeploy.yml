@@ -35,7 +35,7 @@ jobs:
       with:
         name: files
         # A file, directory or wildcard pattern that describes what to upload
-        path: 
+        path: |
           covidstats/build
           covidstats/package.json
           covidstats/firebase.json
@@ -52,7 +52,7 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: files
-          path: 
+          path: |
             covidstats/build
             covidstats/package.json
             covidstats/firebase.json
