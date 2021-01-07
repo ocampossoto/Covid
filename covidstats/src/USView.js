@@ -93,7 +93,7 @@ export default function USView(){
     const [deathsToday, setDeathsToday] = React.useState([]);
     const [recoveredToday, setRecoveredToday] = React.useState([]);
     React.useEffect(()=>{
-        var url = "https://firebasestorage.googleapis.com/v0/b/frcscout-6d1d3.appspot.com/o/covid%2FCovidData.json?alt=media&token=743d535c-3eb2-49f8-8579-8f93589d076e";
+        var url = "https://storage.googleapis.com/covidgraphs-16cbc.appspot.com/covid/CovidData.json";
         fetch(url).then(res=> res.json()).then((result)=>{  
             var tKeys = Object.keys(result["US"]);
             setAllData(result['US']);
