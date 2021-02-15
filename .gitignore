@@ -1,3 +1,11 @@
 node_modules
 .firebase/*
 stage.json
+.vs/slnx.sqlite
+covidstats/.firebase/hosting.YnVpbGQ.cache
+covidstats/.eslintcache
+.vs/ProjectSettings.json
+covidstats/.eslintcache
+.vs/VSWorkspaceState.json
+.vs/Covid/v16/.suo
+covidstats/.eslintcache
