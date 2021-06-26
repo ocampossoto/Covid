@@ -32,7 +32,7 @@ jobs:
       - name: run code
         run: node ./scripts/main.js ${{ secrets.User }} ${{ secrets.Password }}
       - name: Commit files
-        run: |
+        run: ls |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git diff
