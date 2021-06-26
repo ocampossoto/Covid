@@ -20,7 +20,10 @@ jobs:
         node-version: [12.x]
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: main
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -32,6 +35,7 @@ jobs:
         run: node ./scripts/main.js ${{ secrets.User }} ${{ secrets.Password }}
       - name: Commit files
         run: |
+          cd main
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
@@ -40,6 +44,7 @@ jobs:
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GIT_TOKEN }}
+          directory: main
         
         
 
