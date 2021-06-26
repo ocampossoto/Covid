@@ -32,12 +32,11 @@ jobs:
       - name: run code
         run: node ./scripts/main.js ${{ secrets.User }} ${{ secrets.Password }}
       - name: test
-        run: ls
+        run:  git diff
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git diff
           git add .
           git diff-index --quiet HEAD || git commit -m "Update json" -a
       - name: Push changes
