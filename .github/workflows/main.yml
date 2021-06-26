@@ -32,7 +32,6 @@ jobs:
         run: node ./scripts/main.js ${{ secrets.User }} ${{ secrets.Password }}
       - name: Commit files
         run: |
-          cd main
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
