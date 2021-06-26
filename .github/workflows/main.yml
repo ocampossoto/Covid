@@ -31,8 +31,6 @@ jobs:
         working-directory: scripts
       - name: run code
         run: node ./scripts/main.js ${{ secrets.User }} ${{ secrets.Password }}
-      - name: test
-        run:  git diff
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
