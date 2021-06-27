@@ -2,5 +2,5 @@ node_modules
 .firebase/*
 .vs/slnx.sqlite
 covidstats/.firebase/hosting.YnVpbGQ.cache
-covidstats/.eslintcache
 .vs/Covid/v16/.suo
+covidstats/.eslintcache
