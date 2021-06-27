@@ -1,6 +1,6 @@
 # Covid Graphs
 
-![Node.js CI](https://github.com/ocampossoto/Covid/workflows/Node.js%20CI/badge.svg)
+[![Build and Deploy Website](https://github.com/ocampossoto/Covid/actions/workflows/buildAndDeploy.yml/badge.svg)](https://github.com/ocampossoto/Covid/actions/workflows/buildAndDeploy.yml)
 
 This is a web app build in React that allows you to see how COVID-19 is spreading. 
 Some of the main features are:
