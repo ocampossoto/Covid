@@ -1,6 +1,6 @@
 const axios = require('axios');
 var fs = require('fs');
-var stats = fs.statSync("../covidUSData.json")
+var stats = fs.statSync("./covidUSData.json")
 var fileSizeInBytes = stats.size;
 // Convert the file size to megabytes (optional)
 var fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
@@ -76,13 +76,13 @@ axios.get('https://api.github.com/repos/CSSEGISandData/COVID-19/contents/csse_co
             process.stdout.write("Proccessing... " + Math.round(i / fileList.length * 100) + "% \r");
         }
         //Save File
-        fs.writeFileSync('../covidUSData.json', JSON.stringify(AllData, null, 2), err => {
+        fs.writeFileSync('./covidUSData.json', JSON.stringify(AllData, null, 2), err => {
             if (err) {
                 console.error(err)
                 return
             }
         });
-        var stats = fs.statSync("../covidUSData.json")
+        var stats = fs.statSync("./covidUSData.json")
         var fileSizeInBytes = stats.size;
         // Convert the file size to megabytes (optional)
         var fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
