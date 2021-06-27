@@ -30,7 +30,7 @@ export default function StateGraphs(props) {
             return new Date(a.name) - new Date(b.name);
         })
         setData(finalResults);
-    })
+    }, [setData,props.data])
     return( <div>
          <Grid container justify="center" spacing={1} align="center">
             <Grid item lg={12} md={12} sm={12}>
