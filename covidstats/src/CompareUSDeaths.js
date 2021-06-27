@@ -61,7 +61,7 @@ export default function CompareUSDeaths(){
         
         var covidItem = temp.find(e => e.name === "name");
         if(covidItem === undefined){
-            temp.push({"name": "Covid-19 (2020)","Deaths": result["US"][result["US"].length-1].deaths});
+            temp.push({"name": "Covid-19 (2020-now)","Deaths": result["US"][result["US"].length-1].deaths});
         }
         temp = temp.sort((a,b) => {
             if(parseInt(a.Deaths,10) > parseInt(b.Deaths,10)){

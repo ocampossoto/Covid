@@ -38,6 +38,9 @@ export default function Home(){
             <Grid item lg={12}>
                 <Button  variant="contained"onClick={() => history.push("/CompareCountries")}>Compare Countries</Button>
             </Grid>
+            <Grid item lg={12}>
+                <Button  variant="contained"onClick={() => history.push("/CompareUSDeaths")}>Compare Deaths to 2018</Button>
+            </Grid>
             <Grid item lg={12} style={{marginTop: "5%"}}>
                 <InstallPWA/>
             </Grid>
