@@ -7,7 +7,7 @@ import StateGraphs from './StateGraphs';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 import CoungryGraphs from './CountryGraphs';
-import {DatePicker} from '@material-ui/pickers';
+import { DatePicker } from '@material-ui/pickers';
 import MUIDataTable from "mui-datatables";
 import { Bar, CartesianGrid, Cell, ComposedChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { Grid, Typography } from '@material-ui/core';
@@ -31,46 +31,46 @@ const isToday = (someDate) => {
 }
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-  
+
     return (
-      <div
-        role="tabpanel"
-        hidden={value !== index}
-        id={`full-width-tabpanel-${index}`}
-        aria-labelledby={`full-width-tab-${index}`}
-        {...other}
-      >
-        {value === index && (
-          <Box p={3}>
-            {children}
-          </Box>
-        )}
-      </div>
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`full-width-tabpanel-${index}`}
+            aria-labelledby={`full-width-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box p={3}>
+                    {children}
+                </Box>
+            )}
+        </div>
     );
-  }
-  
-  TabPanel.propTypes = {
+}
+
+TabPanel.propTypes = {
     children: PropTypes.node,
     index: PropTypes.any.isRequired,
     value: PropTypes.any.isRequired,
-  };
-  
- const DataTypes= [
-    {"name": "Confirmed", "color": "Blue"},
-    {"name": "Confirmed Per Day", "color":"LightBlue"},
-    {"name": "Recovered", "color": "Green"},
-    {"name": "Recovered Per Day", "color": "LightGreen"},
-    {"name": "Deaths", "color": "DarkRed"},
-    {"name": "Deaths Per Day", "color":"Red"}
+};
+
+const DataTypes = [
+    { "name": "Confirmed", "color": "Blue" },
+    { "name": "Confirmed Per Day", "color": "LightBlue" },
+    { "name": "Recovered", "color": "Green" },
+    { "name": "Recovered Per Day", "color": "LightGreen" },
+    { "name": "Deaths", "color": "DarkRed" },
+    { "name": "Deaths Per Day", "color": "Red" }
 ];
 function a11yProps(index) {
     return {
-      id: `scrollable-auto-tab-${index}`,
-      'aria-controls': `scrollable-auto-tabpanel-${index}`,
+        id: `scrollable-auto-tab-${index}`,
+        'aria-controls': `scrollable-auto-tabpanel-${index}`,
     };
-  }
+}
 const topStates = ["Texas", "California", "Florida", "New York", "Illinois"]
-export default function USView(){
+export default function USView() {
     const [value, setValue] = React.useState(3);
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -85,104 +85,102 @@ export default function USView(){
     const [cumulative, setCumulative] = React.useState([]);
     const [exclude, setExclude] = React.useState([]);
     const currenDate = new Date();
-    const defaultStart = new Date().setMonth(new Date().getMonth()-6);
+    const defaultStart = new Date().setMonth(new Date().getMonth() - 6);
     const [startUSGraphDate, setStartUSGraphDate] = React.useState(defaultStart);
     const [endUSGraphDate, setEndUSGraphDate] = React.useState(currenDate);
     const [include, setInclude] = React.useState(topStates);
     const [confirmedToday, setConfirmedToday] = React.useState([]);
     const [deathsToday, setDeathsToday] = React.useState([]);
     const [recoveredToday, setRecoveredToday] = React.useState([]);
-    React.useEffect(()=>{
-        var url = "https://github.com/ocampossoto/Covid/raw/master/covidUSData.json";
-        fetch(url).then(res=> res.json()).then((result)=>{  
+    React.useEffect(() => {
+        var url = "https://ocampossoto.github.io/Covid/covidUSData.json";
+        fetch(url).then(res => res.json()).then((result) => {
             var tKeys = Object.keys(result["US"]);
             setAllData(result['US']);
             setKeys(tKeys);
-            
-        }).catch((error) => {
-            console.log(error)
-        });
-            
 
-    },[]);
-    React.useEffect(() =>{
+        }).catch((error) => {
+            console.error(error)
+        });
+
+
+    }, []);
+    React.useEffect(() => {
         var data = allData[key];
         var ResultData = []
-        for(var i in data){
+        for (var i in data) {
             var element = {};
-            if(data[i].Confirmed > 0){
-                element["name"] = i;
-                element["Recovered"] = data[i].Recovered !== "" ? parseInt(data[i].Recovered, 10) : 0 ;
-                element["Confirmed"] = data[i].Confirmed !== "" ? parseInt(data[i].Confirmed, 10) : 0 ;
-                element["Deaths"] = data[i].Deaths!== "" ? parseInt(data[i].Deaths, 10) : 0 ;
-                if(ResultData[ResultData.length-1]!==undefined){
-                    element["Deaths Per Day"] = data[i].Deaths!== "" ? parseInt(data[i].Deaths, 10) - parseInt(ResultData[ResultData.length-1].Deaths, 10) : 0;
-                    element["Confirmed Per Day"] = data[i].Confirmed!== "" ? parseInt(data[i].Confirmed, 10) - parseInt(ResultData[ResultData.length-1].Confirmed, 10) : 0;
-                    element["Recovered Per Day"] = data[i].Recovered!== "" ? parseInt(data[i].Recovered, 10) - parseInt(ResultData[ResultData.length-1].Recovered, 10) : 0;
-                }
-                else{
-                    element["Deaths Per Day"] = 0;
-                    element["Confirmed Per Day"] = 0;
-                    element["Recovered Per Day"] = 0;
-                }
-            }
-            else{
-                element["Deaths Per Day"] = 0;
-                element["Confirmed Per Day"] = 0;
-                element["Recovered Per Day"] = 0;
-            }
+            element["name"] = i;
+            element["Recovered"] = data[i].Recovered !== "" ? parseInt(data[i].Recovered, 10) : 0;
+            element["Confirmed"] = data[i].Confirmed !== "" ? parseInt(data[i].Confirmed, 10) : 0;
+            element["Deaths"] = data[i].Deaths !== "" ? parseInt(data[i].Deaths, 10) : 0;
+            element["Deaths Per Day"] = 0;
+            element["Confirmed Per Day"] = 0;
+            element["Recovered Per Day"] = 0;
             ResultData.push(element);
         }
+        //Sort data
+        ResultData = ResultData.sort((a,b) =>{
+            return new Date(a.name) - new Date(b.name);
+        })
+        //Get per day data
+        for(i = 0;i<ResultData.length;i++){
+            if(i !== 0){
+                ResultData[i]["Deaths Per Day"] = ResultData[i].Deaths - ResultData[i-1].Deaths;
+                ResultData[i]["Confirmed Per Day"] = ResultData[i].Confirmed - ResultData[i-1].Confirmed;
+                ResultData[i]["Recovered Per Day"] = ResultData[i].Recovered - ResultData[i-1].Recovered;
+            }
+        }
         setData(ResultData);
-    
-    },[key,allData])
+
+    }, [key, allData])
     React.useEffect(() => {
         var results = [];
-        for(var i in keys){
+        for (var i in keys) {
             var element = [];
-            for(var day in allData[keys[i]]){
+            for (var day in allData[keys[i]]) {
                 var date = new Date(day);
-                if(datesAreOnSameDay(date, new Date(Date.now()))){
+                if (datesAreOnSameDay(date, new Date(Date.now()))) {
                     var tempElement = allData[keys[i]][day];
                     element = [
                         keys[i],
                         tempElement['Recovered'] !== "" ? parseInt(tempElement['Recovered'], 10) : 0,
                         tempElement['Confirmed'] !== "" ? parseInt(tempElement['Confirmed'], 10) : 0,
                         tempElement['Deaths'] !== "" ? parseInt(tempElement['Deaths'], 10) : 0,
-                        tempElement['Testing_Rate'] !=="" ? parseFloat(tempElement['Testing_Rate']).toFixed(3): 0.00,
-                        tempElement['Mortality_Rate'] !=="" ? parseFloat(tempElement['Mortality_Rate']).toFixed(3): 0.00
+                        tempElement['Testing_Rate'] !== "" ? parseFloat(tempElement['Testing_Rate']).toFixed(3) : 0.00,
+                        tempElement['Mortality_Rate'] !== "" ? parseFloat(tempElement['Mortality_Rate']).toFixed(3) : 0.00
                     ]
                 }
             }
-            results.push(element); 
+            results.push(element);
         }
         setStateTableData(results);
-    },[allData,keys])
-    React.useEffect(()=>{
+    }, [allData, keys])
+    React.useEffect(() => {
         var results = {};
         var tKeys = keys;
         var all = allData;
-        for(var i in tKeys){
-            if(!exclude.includes(tKeys[i])){
-                for(var day in all[tKeys[i]]){
+        for (var i in tKeys) {
+            if (!exclude.includes(tKeys[i])) {
+                for (var day in all[tKeys[i]]) {
                     var date = new Date(day);
-                    if(date >= startUSGraphDate && date <= endUSGraphDate){
-                        date = date.getMonth()+1+"/"+date.getDate()+"/"+date.getFullYear();
-                        if(day !==""){
-                            if (!(date in results)){
+                    if (date >= startUSGraphDate && date <= endUSGraphDate) {
+                        date = date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear();
+                        if (day !== "") {
+                            if (!(date in results)) {
                                 results[date] = {
-                                    'Confirmed': all[tKeys[i]][day]['Confirmed'] !== "" ? parseInt(all[tKeys[i]][day]['Confirmed']): 0, 
-                                    'Deaths': all[tKeys[i]][day]['Confirmed'] !== "" ? parseInt(all[tKeys[i]][day]['Confirmed']): 0, 
-                                    'Recovered': all[tKeys[i]][day]['Recovered'] !== "" ? parseInt(all[tKeys[i]][day]['Confirmed']): 0,
-                                    "Deaths Per Day" : 0,
-                                    "Confirmed Per Day" : 0,
-                                    "Recovered Per Day" :  0
+                                    'Confirmed': all[tKeys[i]][day]['Confirmed'] !== "" ? parseInt(all[tKeys[i]][day]['Confirmed']) : 0,
+                                    'Deaths': all[tKeys[i]][day]['Confirmed'] !== "" ? parseInt(all[tKeys[i]][day]['Confirmed']) : 0,
+                                    'Recovered': all[tKeys[i]][day]['Recovered'] !== "" ? parseInt(all[tKeys[i]][day]['Confirmed']) : 0,
+                                    "Deaths Per Day": 0,
+                                    "Confirmed Per Day": 0,
+                                    "Recovered Per Day": 0
                                 };
                             }
-                            else{
-                                results[date]['Confirmed'] += all[tKeys[i]][day]['Confirmed']!== ""? parseInt(all[tKeys[i]][day]['Confirmed']): 0;
-                                results[date]['Deaths']+= all[tKeys[i]][day]['Deaths'] !== ""? parseInt(all[tKeys[i]][day]['Deaths']): 0;
-                                results[date]['Recovered']+= all[tKeys[i]][day]['Recovered'] !== ""? parseInt(all[tKeys[i]][day]['Recovered']): 0;                    
+                            else {
+                                results[date]['Confirmed'] += all[tKeys[i]][day]['Confirmed'] !== "" ? parseInt(all[tKeys[i]][day]['Confirmed']) : 0;
+                                results[date]['Deaths'] += all[tKeys[i]][day]['Deaths'] !== "" ? parseInt(all[tKeys[i]][day]['Deaths']) : 0;
+                                results[date]['Recovered'] += all[tKeys[i]][day]['Recovered'] !== "" ? parseInt(all[tKeys[i]][day]['Recovered']) : 0;
                             }
                         }
                     }
@@ -190,133 +188,134 @@ export default function USView(){
             }
         }
         var finalResults = []
-        for(var key in results){
+        for (var key in results) {
             date = new Date(key);
-            var prevDate = new Date(date.setDate(date.getDate()-1));
-            prevDate = prevDate.getMonth()+1+"/"+prevDate.getDate()+"/"+prevDate.getFullYear();
-            if(prevDate in results){
-                results[key]["Deaths Per Day"] = results[key]['Deaths']- results[prevDate]['Deaths'];
-                results[key]["Recovered Per Day"] = results[key]['Recovered']- results[prevDate]['Recovered'];
-                results[key]["Confirmed Per Day"] = results[key]['Confirmed']- results[prevDate]['Confirmed'];
+            var prevDate = new Date(date.setDate(date.getDate() - 1));
+            prevDate = prevDate.getMonth() + 1 + "/" + prevDate.getDate() + "/" + prevDate.getFullYear();
+            if (prevDate in results) {
+                results[key]["Deaths Per Day"] = results[key]['Deaths'] - results[prevDate]['Deaths'];
+                results[key]["Recovered Per Day"] = results[key]['Recovered'] - results[prevDate]['Recovered'];
+                results[key]["Confirmed Per Day"] = results[key]['Confirmed'] - results[prevDate]['Confirmed'];
             }
             var element = results[key];
             element['name'] = key;
             finalResults.push(element);
         }
+        finalResults = finalResults.sort((a, b) => {
+            return new Date(a.name) - new Date(b.name);
+        })
         setCumulative(finalResults);
 
-    },[exclude, allData,keys,startUSGraphDate, endUSGraphDate])
-    React.useEffect(()=>{
+    }, [exclude, allData, keys, startUSGraphDate, endUSGraphDate])
+    React.useEffect(() => {
         var results = {};
-        for(var i in keys){
-            for(var day in allData[keys[i]]){
+        for (var i in keys) {
+            for (var day in allData[keys[i]]) {
                 var currDay = new Date(day);
-                var dayStr = currDay.getFullYear() + "-" + (currDay.getMonth()+1) +"-"+ currDay.getDate();
+                var dayStr = currDay.getFullYear() + "-" + (currDay.getMonth() + 1) + "-" + currDay.getDate();
                 var element = allData[keys[i]][day];
-                if(!isNaN(currDay.getDate())){
-                    if (dayStr in results){
-                        results[dayStr]["Recovered"] +=element['Recovered'] !== "" ? parseInt(element['Recovered'], 10) : 0;
+                if (!isNaN(currDay.getDate())) {
+                    if (dayStr in results) {
+                        results[dayStr]["Recovered"] += element['Recovered'] !== "" ? parseInt(element['Recovered'], 10) : 0;
                         results[dayStr]["Confirmed"] += element['Confirmed'] !== "" ? parseInt(element['Confirmed'], 10) : 0;
                         results[dayStr]["Deaths"] += element['Deaths'] !== "" ? parseInt(element['Deaths'], 10) : 0;
-                        results[dayStr]["Testing_Rate"] = parseFloat(results[dayStr]["Testing_Rate"]).toFixed(3) + element['Testing_Rate'] !=="" ? parseFloat(element['Testing_Rate']).toFixed(3): 0.00
-                        results[dayStr]["Mortality_Rate"] = parseFloat(results[dayStr]["Mortality_Rate"]).toFixed(3) + element['Mortality_Rate'] !=="" ? parseFloat(element['Mortality_Rate']).toFixed(3): 0.00;
+                        results[dayStr]["Testing_Rate"] = parseFloat(results[dayStr]["Testing_Rate"]).toFixed(3) + element['Testing_Rate'] !== "" ? parseFloat(element['Testing_Rate']).toFixed(3) : 0.00
+                        results[dayStr]["Mortality_Rate"] = parseFloat(results[dayStr]["Mortality_Rate"]).toFixed(3) + element['Mortality_Rate'] !== "" ? parseFloat(element['Mortality_Rate']).toFixed(3) : 0.00;
                     }
-                    else{
+                    else {
                         results[dayStr] = {
-                            "Recovered"     : element['Recovered'] !== "" ? parseInt(element['Recovered'], 10) : 0,
-                            "Confirmed"     : element['Confirmed'] !== "" ? parseInt(element['Confirmed'], 10) : 0,
-                            "Deaths"        : element['Deaths'] !== "" ? parseInt(element['Deaths'], 10) : 0,
-                            'Testing_Rate'  : element['Testing_Rate'] !=="" ? parseFloat(element['Testing_Rate']).toFixed(3): 0.00,
-                            'Mortality_Rate': element['Mortality_Rate'] !=="" ? parseFloat(element['Mortality_Rate']).toFixed(3): 0.00}
+                            "Recovered": element['Recovered'] !== "" ? parseInt(element['Recovered'], 10) : 0,
+                            "Confirmed": element['Confirmed'] !== "" ? parseInt(element['Confirmed'], 10) : 0,
+                            "Deaths": element['Deaths'] !== "" ? parseInt(element['Deaths'], 10) : 0,
+                            'Testing_Rate': element['Testing_Rate'] !== "" ? parseFloat(element['Testing_Rate']).toFixed(3) : 0.00,
+                            'Mortality_Rate': element['Mortality_Rate'] !== "" ? parseFloat(element['Mortality_Rate']).toFixed(3) : 0.00
+                        }
                     }
                 }
-               
+
             }
         }
-        var finalResults =[];
-        for(var KEY in results){
-            finalResults.push([KEY, results[KEY]["Recovered"],results[KEY]["Confirmed"],results[KEY]["Deaths"],results[KEY]["Testing_Rate"],results[KEY]["Mortality_Rate"]])
+        var finalResults = [];
+        for (var KEY in results) {
+            finalResults.push([KEY, results[KEY]["Recovered"], results[KEY]["Confirmed"], results[KEY]["Deaths"], results[KEY]["Testing_Rate"], results[KEY]["Mortality_Rate"]])
         };
         setUSTableData(finalResults);
-    },[allData, keys])
-    React.useEffect(()=>{
-        if(value === 4){
+    }, [allData, keys])
+    React.useEffect(() => {
+        if (value === 4) {
             var confirmed = [];
             var deaths = [];
             var recovered = [];
             for (const [key, value] of Object.entries(allData)) {
-                if(include.includes(key)){
-                   for(var [key1, value1] of Object.entries(value)){
-                       var tempData = new Date(key1);
-                       if(isToday(tempData)){
-                            if(value1.Deaths === ""){
-                                confirmed.push({state: key, confirmed: 0});
+                if (include.includes(key)) {
+                    for (var [key1, value1] of Object.entries(value)) {
+                        var tempData = new Date(key1);
+                        if (isToday(tempData)) {
+                            if (value1.Deaths === "") {
+                                confirmed.push({ state: key, confirmed: 0 });
                             }
-                            else{
-                                confirmed.push({state: key, confirmed: parseInt(value1.Confirmed, 10)});
+                            else {
+                                confirmed.push({ state: key, confirmed: parseInt(value1.Confirmed, 10) });
                             }
-                            if(value1.Deaths === ""){
-                                deaths.push({state: key, deaths: 0});
+                            if (value1.Deaths === "") {
+                                deaths.push({ state: key, deaths: 0 });
                             }
-                            else{
-                                deaths.push({state: key, deaths: parseInt(value1.Deaths, 10)});
+                            else {
+                                deaths.push({ state: key, deaths: parseInt(value1.Deaths, 10) });
                             }
-                            if(value1.Recovered === ""){
-                                recovered.push({state: key, recovered: 0});
+                            if (value1.Recovered === "") {
+                                recovered.push({ state: key, recovered: 0 });
                             }
-                            else{
-                                recovered.push({state: key, recovered: parseFloat(value1.Recovered)});
+                            else {
+                                recovered.push({ state: key, recovered: parseFloat(value1.Recovered) });
                             }
 
-                            
-                       }
-                   }
+
+                        }
+                    }
                 }
             }
-            confirmed = confirmed.sort((a,b) =>
-            {
-                if(isFinite(b.confirmed-a.confirmed)){
-                    return b.confirmed-a.confirmed;
+            confirmed = confirmed.sort((a, b) => {
+                if (isFinite(b.confirmed - a.confirmed)) {
+                    return b.confirmed - a.confirmed;
                 }
-                else{
+                else {
                     return isFinite(a) ? 1 : -1;
                 }
-             })
-            deaths = deaths.sort((a,b) =>
-            {
-                if(isFinite(b.deaths-a.deaths)){
-                    return b.deaths-a.deaths;
+            })
+            deaths = deaths.sort((a, b) => {
+                if (isFinite(b.deaths - a.deaths)) {
+                    return b.deaths - a.deaths;
                 }
-                else{
+                else {
                     return isFinite(a) ? 1 : -1;
                 }
-             })
-            recovered = recovered.sort((a,b) =>
-            {
-                if(isFinite(b.recovered-a.recovered)){
-                    return b.recovered-a.recovered;
+            })
+            recovered = recovered.sort((a, b) => {
+                if (isFinite(b.recovered - a.recovered)) {
+                    return b.recovered - a.recovered;
                 }
-                else{
+                else {
                     return isFinite(a) ? 1 : -1;
                 }
-             })
+            })
             setConfirmedToday(confirmed);
             setDeathsToday(deaths);
             setRecoveredToday(recovered)
         }
-    },[value, include,allData])
-    const totalColumns =  [ 
-        { name: 'Date', label: 'Date'},
-        { name: 'Recovered', label: 'Recovered'},
+    }, [value, include, allData])
+    const totalColumns = [
+        { name: 'Date', label: 'Date' },
+        { name: 'Recovered', label: 'Recovered' },
         { name: 'Confirmed', label: 'Confirmed' },
-        {name: 'Deaths', label: 'Deaths'},
+        { name: 'Deaths', label: 'Deaths' },
         { name: 'Testing_Rate', label: 'Testing Rate' },
         { name: 'Mortality_Rate', label: 'Mortality Rate' },];
-    const stateColumns =  [ 
-        { name: 'State', label:'State'},
-        { name: 'Recovered', label: 'Recovered'},
+    const stateColumns = [
+        { name: 'State', label: 'State' },
+        { name: 'Recovered', label: 'Recovered' },
         { name: 'Confirmed', label: 'Confirmed' },
-        {name: 'Deaths', label: 'Deaths'},
+        { name: 'Deaths', label: 'Deaths' },
         { name: 'Testing_Rate', label: 'Testing Rate' },
         { name: 'Mortality_Rate', label: 'Mortality Rate' },];
     const stateOptions = {
@@ -324,14 +323,14 @@ export default function USView(){
         responsive,
         selectableRows: "none",
         expandableRows: false,
-        pagination:false
+        pagination: false
     };
     const totalOptions = {
         filter: true,
         responsive,
         selectableRows: "none",
         expandableRows: false,
-        pagination:false
+        pagination: false
     };
     return <div>
         <Tabs
@@ -342,30 +341,30 @@ export default function USView(){
             variant="scrollable"
             scrollButtons="auto"
         >
-        <Tab label="Table By State" {...a11yProps(0)}/>
-        <Tab label="Graph State" {...a11yProps(1)} />
-        <Tab label="Table Totals"{...a11yProps(2)} />
-        <Tab label="Graph Totals"{...a11yProps(3)} />
-        <Tab label="Compare States"{...a11yProps(4)} />
+            <Tab label="Table By State" {...a11yProps(0)} />
+            <Tab label="Graph State" {...a11yProps(1)} />
+            <Tab label="Table Totals"{...a11yProps(2)} />
+            <Tab label="Graph Totals"{...a11yProps(3)} />
+            <Tab label="Compare States"{...a11yProps(4)} />
         </Tabs>
         <TabPanel value={value} index={0}>
             <MUIDataTable
                 title={"US States"}
                 data={stateTableData}
                 columns={stateColumns}
-                options={stateOptions} 
+                options={stateOptions}
             />
         </TabPanel>
         {/* Graph state */}
         <TabPanel value={value} index={1}>
             <Autocomplete
-                    options={keys}
-                    value={key}
-                    onChange={(e, val) => setKey(val)}
-                    renderInput={(params) => <TextField {...params} label="State" variant="outlined" />}
+                options={keys}
+                value={key}
+                onChange={(e, val) => setKey(val)}
+                renderInput={(params) => <TextField {...params} label="State" variant="outlined" />}
             />
-            {key !=="Select a State" ? DataTypes.map(item => 
-                <StateGraphs key={item.name} data={data} item={item}/>): <></>
+            {key !== "Select a State" ? DataTypes.map(item =>
+                <StateGraphs key={item.name} data={data} item={item} />) : <></>
             }
 
         </TabPanel>
@@ -374,7 +373,7 @@ export default function USView(){
                 title={"US Totals By Date"}
                 data={USTableData}
                 columns={totalColumns}
-                options={totalOptions} 
+                options={totalOptions}
             />
         </TabPanel>
         {/* Graph US */}
@@ -383,38 +382,38 @@ export default function USView(){
                 multiple
                 options={keys}
                 value={exclude}
-                onChange={(e, val) =>{setExclude(val)}}
+                onChange={(e, val) => { setExclude(val) }}
                 renderInput={(params) => <TextField {...params} label="Excluded States" variant="outlined" />}
-                style={{marginBottom:"2%"}}
+                style={{ marginBottom: "2%" }}
             />
-             <DatePicker animateYearScrolling value={startUSGraphDate} onChange={setStartUSGraphDate} label="Start Date" minDate={new Date("2019-12-2")} variant="inline" inputVariant="outlined"/>
-                &nbsp;&nbsp;
-                <DatePicker animateYearScrolling value={endUSGraphDate} onChange={setEndUSGraphDate} label="End Date" minDate={new Date("2019-12-2")} variant="inline" inputVariant="outlined"/>
-            {DataTypes.map(item => 
-                <CoungryGraphs keys={keys} key={item.name} data={cumulative} item={item}/>)
+            <DatePicker animateYearScrolling value={startUSGraphDate} onChange={setStartUSGraphDate} label="Start Date" minDate={new Date("2019-12-2")} variant="inline" inputVariant="outlined" />
+            &nbsp;&nbsp;
+            <DatePicker animateYearScrolling value={endUSGraphDate} onChange={setEndUSGraphDate} label="End Date" minDate={new Date("2019-12-2")} variant="inline" inputVariant="outlined" />
+            {DataTypes.map(item =>
+                <CoungryGraphs keys={keys} key={item.name} data={cumulative} item={item} />)
             }
 
         </TabPanel>
         <TabPanel value={value} index={4}>
             <Grid container justify="center" spacing={3} align="center">
                 <Grid item lg={12} md={12} sm={12}>
-                        <Autocomplete
+                    <Autocomplete
                         multiple
                         options={keys}
                         value={include}
-                        onChange={(e, val) =>{setInclude(val)}}
+                        onChange={(e, val) => { setInclude(val) }}
                         renderInput={(params) => <TextField {...params} label="Included States" variant="outlined" />}
-                        style={{marginBottom:"2%"}}
+                        style={{ marginBottom: "2%" }}
                     />
                 </Grid>
                 <Grid item lg={12} md={12} sm={12}>
-                        <Typography variant="h5">Confirmed</Typography>
-                    </Grid>
-                <ResponsiveContainer height={window.innerHeight*0.5}>
-                    <ComposedChart layout="vertical" data={confirmedToday} margin={{right: 16}} >
+                    <Typography variant="h5">Confirmed</Typography>
+                </Grid>
+                <ResponsiveContainer height={window.innerHeight * 0.5}>
+                    <ComposedChart layout="vertical" data={confirmedToday} margin={{ right: 16 }} >
                         <CartesianGrid stroke="#f5f5f5" />
                         <XAxis type="number" />
-                        <YAxis  dataKey="state" type="category" />
+                        <YAxis dataKey="state" type="category" />
                         <Tooltip />
                         <Bar type="monotone" dataKey="confirmed">
                             {
@@ -427,13 +426,13 @@ export default function USView(){
                     </ComposedChart>
                 </ResponsiveContainer>
                 <Grid item lg={12} md={12} sm={12}>
-                        <Typography variant="h5">Deaths</Typography>
-                    </Grid>
-                <ResponsiveContainer height={window.innerHeight*0.5}>
-                    <ComposedChart layout="vertical" data={deathsToday} margin={{right: 16}} >
+                    <Typography variant="h5">Deaths</Typography>
+                </Grid>
+                <ResponsiveContainer height={window.innerHeight * 0.5}>
+                    <ComposedChart layout="vertical" data={deathsToday} margin={{ right: 16 }} >
                         <CartesianGrid stroke="#f5f5f5" />
                         <XAxis type="number" />
-                        <YAxis  dataKey="state" type="category" />
+                        <YAxis dataKey="state" type="category" />
                         <Tooltip />
                         <Bar type="monotone" dataKey="deaths">
                             {
@@ -448,11 +447,11 @@ export default function USView(){
                 <Grid item lg={12} md={12} sm={12}>
                     <Typography variant="h5">Recovered</Typography>
                 </Grid>
-                <ResponsiveContainer height={window.innerHeight*0.5}>
-                    <ComposedChart layout="vertical" data={recoveredToday} margin={{right: 16}} >
+                <ResponsiveContainer height={window.innerHeight * 0.5}>
+                    <ComposedChart layout="vertical" data={recoveredToday} margin={{ right: 16 }} >
                         <CartesianGrid stroke="#f5f5f5" />
                         <XAxis type="number" />
-                        <YAxis  dataKey="state" type="category" />
+                        <YAxis dataKey="state" type="category" />
                         <Tooltip />
                         <Bar type="monotone" dataKey="recovered">
                             {
