@@ -72,7 +72,7 @@ axios.get('https://api.github.com/repos/CSSEGISandData/COVID-19/contents/csse_co
             process.stdout.write("Proccessing... "+ Math.round(i/fileList.length * 100)+"% \r");
         }
         //Save File
-        fs.writeFile('../covidUSData.json', JSON.stringify(AllData), err => {
+        fs.writeFileSync('../covidUSData.json', JSON.stringify(AllData, null, 2), err => {
             if (err) {
                 console.error(err)
                 return
