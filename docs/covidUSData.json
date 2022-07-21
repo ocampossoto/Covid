@@ -15,6 +15,21 @@
         "ISO3": "USA",
         "Testing_Rate": "161717.53666239395",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "1401893",
+        "Deaths": "19852",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "1.0",
+        "Incident_Rate": "28591.47676459281",
+        "People_Tested": "7936804.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.4160852504435075",
+        "UID": "84000001.0",
+        "ISO3": "USA",
+        "Testing_Rate": "161870.3760922747",
+        "Hospitalization_Rate": ""
       }
     },
     "Alaska": {
@@ -28,6 +43,21 @@
         "People_Tested": "",
         "People_Hospitalized": "",
         "Mortality_Rate": "0.4703253113345166",
+        "UID": "84000002.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "281203",
+        "Deaths": "1309",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "2.0",
+        "Incident_Rate": "38439.6038521212",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.4655000124465244",
         "UID": "84000002.0",
         "ISO3": "USA",
         "Testing_Rate": "",
@@ -49,6 +79,21 @@
         "ISO3": "ASM",
         "Testing_Rate": "",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "7471",
+        "Deaths": "33",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "60.0",
+        "Incident_Rate": "13427.149044769145",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.4417079373577834",
+        "UID": "16.0",
+        "ISO3": "ASM",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
       }
     },
     "Arizona": {
@@ -62,6 +107,21 @@
         "People_Tested": "20132866.0",
         "People_Hospitalized": "",
         "Mortality_Rate": "1.4174623850960992",
+        "UID": "84000004.0",
+        "ISO3": "USA",
+        "Testing_Rate": "276599.1039354875",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "2179180",
+        "Deaths": "30698",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "4.0",
+        "Incident_Rate": "29939.067558197414",
+        "People_Tested": "20132866.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.4086950137207574",
         "UID": "84000004.0",
         "ISO3": "USA",
         "Testing_Rate": "276599.1039354875",
@@ -83,6 +143,21 @@
         "ISO3": "USA",
         "Testing_Rate": "176486.84275055636",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "890943",
+        "Deaths": "11654",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "5.0",
+        "Incident_Rate": "29522.891480029848",
+        "People_Tested": "5329126.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.3080522547458142",
+        "UID": "84000005.0",
+        "ISO3": "USA",
+        "Testing_Rate": "176589.53331627898",
+        "Hospitalization_Rate": ""
       }
     },
     "California": {
@@ -99,6 +174,21 @@
         "UID": "84000006.0",
         "ISO3": "USA",
         "Testing_Rate": "448728.8174092356",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "10515406",
+        "Deaths": "93046",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "6.0",
+        "Incident_Rate": "26613.045790918928",
+        "People_Tested": "177759151.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.8848540893237978",
+        "UID": "84000006.0",
+        "ISO3": "USA",
+        "Testing_Rate": "449883.9536312599",
         "Hospitalization_Rate": ""
       }
     },
@@ -117,6 +207,21 @@
         "ISO3": "USA",
         "Testing_Rate": "333824.8532316814",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "1576694",
+        "Deaths": "12922",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "8.0",
+        "Incident_Rate": "27379.167928517647",
+        "People_Tested": "19233120.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.8195629589508173",
+        "UID": "84000008.0",
+        "ISO3": "USA",
+        "Testing_Rate": "333981.6237452108",
+        "Hospitalization_Rate": ""
       }
     },
     "Connecticut": {
@@ -130,6 +235,21 @@
         "People_Tested": "14648536.0",
         "People_Hospitalized": "",
         "Mortality_Rate": "1.3134988026802907",
+        "UID": "84000009.0",
+        "ISO3": "USA",
+        "Testing_Rate": "410865.5488323941",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "845240",
+        "Deaths": "11091",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "9.0",
+        "Incident_Rate": "23707.48834525804",
+        "People_Tested": "14648536.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.3121716908806966",
         "UID": "84000009.0",
         "ISO3": "USA",
         "Testing_Rate": "410865.5488323941",
@@ -151,10 +271,40 @@
         "ISO3": "USA",
         "Testing_Rate": "353717.9439782124",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "290401",
+        "Deaths": "3010",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "10.0",
+        "Incident_Rate": "29822.5237326498",
+        "People_Tested": "3445809.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.0364978082031395",
+        "UID": "84000010.0",
+        "ISO3": "USA",
+        "Testing_Rate": "353864.8995033704",
+        "Hospitalization_Rate": ""
       }
     },
     "Diamond Princess": {
       "2022-07-20 04:32:01": {
+        "Confirmed": "49",
+        "Deaths": "0",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "88888.0",
+        "Incident_Rate": "",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.0",
+        "UID": "84088888.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
         "Confirmed": "49",
         "Deaths": "0",
         "Recovered": "",
@@ -185,6 +335,21 @@
         "ISO3": "USA",
         "Testing_Rate": "",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "160723",
+        "Deaths": "1363",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "11.0",
+        "Incident_Rate": "22773.393940338563",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.8480429061179794",
+        "UID": "84000011.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
       }
     },
     "Florida": {
@@ -201,6 +366,21 @@
         "UID": "84000012.0",
         "ISO3": "USA",
         "Testing_Rate": "283144.98869224446",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "6691964",
+        "Deaths": "76922",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "12.0",
+        "Incident_Rate": "31157.6773661024",
+        "People_Tested": "60861724.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.1494682278625528",
+        "UID": "84000012.0",
+        "ISO3": "USA",
+        "Testing_Rate": "283371.2136432251",
         "Hospitalization_Rate": ""
       }
     },
@@ -219,10 +399,40 @@
         "ISO3": "USA",
         "Testing_Rate": "179656.28759445678",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "2721391",
+        "Deaths": "38933",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "13.0",
+        "Incident_Rate": "25631.370248694056",
+        "People_Tested": "19074868.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.430628674821075",
+        "UID": "84000013.0",
+        "ISO3": "USA",
+        "Testing_Rate": "179656.28759445678",
+        "Hospitalization_Rate": ""
       }
     },
     "Grand Princess": {
       "2022-07-20 04:32:01": {
+        "Confirmed": "103",
+        "Deaths": "3",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "99999.0",
+        "Incident_Rate": "",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "2.912621359223301",
+        "UID": "84099999.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
         "Confirmed": "103",
         "Deaths": "3",
         "Recovered": "",
@@ -253,6 +463,21 @@
         "ISO3": "GUM",
         "Testing_Rate": "274544.6906453793",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "54163",
+        "Deaths": "377",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "66.0",
+        "Incident_Rate": "32980.167936235375",
+        "People_Tested": "456815.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.6960471170356147",
+        "UID": "316.0",
+        "ISO3": "GUM",
+        "Testing_Rate": "278157.32909534854",
+        "Hospitalization_Rate": ""
       }
     },
     "Hawaii": {
@@ -266,6 +491,21 @@
         "People_Tested": "4131934.0",
         "People_Hospitalized": "",
         "Mortality_Rate": "0.4834036656799143",
+        "UID": "84000015.0",
+        "ISO3": "USA",
+        "Testing_Rate": "291829.6286669981",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "321869",
+        "Deaths": "1548",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "15.0",
+        "Incident_Rate": "22732.916534828008",
+        "People_Tested": "4131934.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.4809410039488114",
         "UID": "84000015.0",
         "ISO3": "USA",
         "Testing_Rate": "291829.6286669981",
@@ -287,6 +527,21 @@
         "ISO3": "USA",
         "Testing_Rate": "70114.18163301279",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "474150",
+        "Deaths": "5010",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "16.0",
+        "Incident_Rate": "26532.33094487329",
+        "People_Tested": "1252986.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.0566276494780134",
+        "UID": "84000016.0",
+        "ISO3": "USA",
+        "Testing_Rate": "70114.18163301279",
+        "Hospitalization_Rate": ""
       }
     },
     "Illinois": {
@@ -300,6 +555,21 @@
         "People_Tested": "",
         "People_Hospitalized": "",
         "Mortality_Rate": "1.1041088079492645",
+        "UID": "84000017.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "3516370",
+        "Deaths": "38785",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "17.0",
+        "Incident_Rate": "27749.52392398851",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.1029840432036446",
         "UID": "84000017.0",
         "ISO3": "USA",
         "Testing_Rate": "",
@@ -321,6 +591,21 @@
         "ISO3": "USA",
         "Testing_Rate": "303153.5218922617",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "1807442",
+        "Deaths": "24030",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "18.0",
+        "Incident_Rate": "26847.64117150675",
+        "People_Tested": "20422427.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.3295032427043303",
+        "UID": "84000018.0",
+        "ISO3": "USA",
+        "Testing_Rate": "303353.57480200805",
+        "Hospitalization_Rate": ""
       }
     },
     "Iowa": {
@@ -334,6 +619,21 @@
         "People_Tested": "",
         "People_Hospitalized": "",
         "Mortality_Rate": "1.2066608473446137",
+        "UID": "84000019.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "810664",
+        "Deaths": "9759",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "19.0",
+        "Incident_Rate": "25694.00995857461",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.2038279731183326",
         "UID": "84000019.0",
         "ISO3": "USA",
         "Testing_Rate": "",
@@ -355,6 +655,21 @@
         "ISO3": "USA",
         "Testing_Rate": "",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "828010",
+        "Deaths": "8966",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "20.0",
+        "Incident_Rate": "28421.584491064128",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.0828371638023695",
+        "UID": "84000020.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
       }
     },
     "Kentucky": {
@@ -368,6 +683,21 @@
         "People_Tested": "",
         "People_Hospitalized": "",
         "Mortality_Rate": "1.1372276031589037",
+        "UID": "84000021.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "1436771",
+        "Deaths": "16312",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "21.0",
+        "Incident_Rate": "32159.26948995596",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.1353235832293385",
         "UID": "84000021.0",
         "ISO3": "USA",
         "Testing_Rate": "",
@@ -389,6 +719,21 @@
         "ISO3": "USA",
         "Testing_Rate": "303230.5152691214",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "1357396",
+        "Deaths": "17493",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "22.0",
+        "Incident_Rate": "29198.884699988856",
+        "People_Tested": "14104149.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.2887175150066743",
+        "UID": "84000022.0",
+        "ISO3": "USA",
+        "Testing_Rate": "303393.718887092",
+        "Hospitalization_Rate": ""
       }
     },
     "Maine": {
@@ -405,6 +750,21 @@
         "UID": "84000023.0",
         "ISO3": "USA",
         "Testing_Rate": "327526.83356494363",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "273813",
+        "Deaths": "2464",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "23.0",
+        "Incident_Rate": "20369.777981449355",
+        "People_Tested": "4402743.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.8998842275567632",
+        "UID": "84000023.0",
+        "ISO3": "USA",
+        "Testing_Rate": "327533.3801513452",
         "Hospitalization_Rate": ""
       }
     },
@@ -423,10 +783,40 @@
         "ISO3": "USA",
         "Testing_Rate": "366309.1662145532",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "1164135",
+        "Deaths": "14897",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "24.0",
+        "Incident_Rate": "19255.650315597253",
+        "People_Tested": "22192553.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.279662582088847",
+        "UID": "84000024.0",
+        "ISO3": "USA",
+        "Testing_Rate": "367081.1720104273",
+        "Hospitalization_Rate": ""
       }
     },
     "Massachusetts": {
       "2022-07-20 04:32:01": {
+        "Confirmed": "1944319",
+        "Deaths": "21068",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "25.0",
+        "Incident_Rate": "28209.18612585297",
+        "People_Tested": "46191532.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.0835670484112947",
+        "UID": "84000025.0",
+        "ISO3": "USA",
+        "Testing_Rate": "670170.6477313103",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
         "Confirmed": "1944319",
         "Deaths": "21068",
         "Recovered": "",
@@ -457,10 +847,40 @@
         "ISO3": "USA",
         "Testing_Rate": "253695.45193247485",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "2652659",
+        "Deaths": "37291",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "26.0",
+        "Incident_Rate": "26561.49977915975",
+        "People_Tested": "25422521.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.4057969757891986",
+        "UID": "84000026.0",
+        "ISO3": "USA",
+        "Testing_Rate": "254559.7779161152",
+        "Hospitalization_Rate": ""
       }
     },
     "Minnesota": {
       "2022-07-20 04:32:01": {
+        "Confirmed": "1571008",
+        "Deaths": "13205",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "27.0",
+        "Incident_Rate": "27856.56936480962",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.8405431417281134",
+        "UID": "84000027.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
         "Confirmed": "1571008",
         "Deaths": "13205",
         "Recovered": "",
@@ -491,6 +911,21 @@
         "ISO3": "USA",
         "Testing_Rate": "",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "862528",
+        "Deaths": "12589",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "28.0",
+        "Incident_Rate": "28981.34468401952",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.4595468205090154",
+        "UID": "84000028.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
       }
     },
     "Missouri": {
@@ -508,10 +943,40 @@
         "ISO3": "USA",
         "Testing_Rate": "",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "1547219",
+        "Deaths": "21021",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "29.0",
+        "Incident_Rate": "25209.56661324581",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.3586311957130826",
+        "UID": "84000029.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
       }
     },
     "Montana": {
       "2022-07-20 04:32:01": {
+        "Confirmed": "292026",
+        "Deaths": "3455",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "30.0",
+        "Incident_Rate": "27323.354335512147",
+        "People_Tested": "2970356.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.183113832329998",
+        "UID": "84000030.0",
+        "ISO3": "USA",
+        "Testing_Rate": "277920.76558462094",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
         "Confirmed": "292026",
         "Deaths": "3455",
         "Recovered": "",
@@ -542,6 +1007,21 @@
         "ISO3": "USA",
         "Testing_Rate": "",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "510735",
+        "Deaths": "4363",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "31.0",
+        "Incident_Rate": "26402.6513537992",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.85425905802422",
+        "UID": "84000031.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
       }
     },
     "Nevada": {
@@ -555,6 +1035,21 @@
         "People_Tested": "",
         "People_Hospitalized": "",
         "Mortality_Rate": "1.423682636720048",
+        "UID": "84000032.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "789674",
+        "Deaths": "11189",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "32.0",
+        "Incident_Rate": "25637.467712674294",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.41691381506799",
         "UID": "84000032.0",
         "ISO3": "USA",
         "Testing_Rate": "",
@@ -576,6 +1071,21 @@
         "ISO3": "USA",
         "Testing_Rate": "",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "336189",
+        "Deaths": "2615",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "33.0",
+        "Incident_Rate": "24725.03348137949",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.7778362766182118",
+        "UID": "84000033.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
       }
     },
     "New Jersey": {
@@ -592,6 +1102,21 @@
         "UID": "84000034.0",
         "ISO3": "USA",
         "Testing_Rate": "343341.4394422997",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "2556303",
+        "Deaths": "34189",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "34.0",
+        "Incident_Rate": "28780.0981514694",
+        "People_Tested": "30514737.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.337439262872985",
+        "UID": "84000034.0",
+        "ISO3": "USA",
+        "Testing_Rate": "343549.6988918274",
         "Hospitalization_Rate": ""
       }
     },
@@ -610,6 +1135,21 @@
         "ISO3": "USA",
         "Testing_Rate": "359991.6349878793",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "582061",
+        "Deaths": "8138",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "35.0",
+        "Incident_Rate": "27759.10672734877",
+        "People_Tested": "7553234.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.3981352469930128",
+        "UID": "84000035.0",
+        "ISO3": "USA",
+        "Testing_Rate": "360221.7443577898",
+        "Hospitalization_Rate": ""
       }
     },
     "New York": {
@@ -627,6 +1167,21 @@
         "ISO3": "USA",
         "Testing_Rate": "591287.4820193588",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "5749409",
+        "Deaths": "70041",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "36.0",
+        "Incident_Rate": "29554.532458093407",
+        "People_Tested": "115073935.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.2182295606383196",
+        "UID": "84000036.0",
+        "ISO3": "USA",
+        "Testing_Rate": "591531.4681975192",
+        "Hospitalization_Rate": ""
       }
     },
     "North Carolina": {
@@ -640,6 +1195,21 @@
         "People_Tested": "24506095.0",
         "People_Hospitalized": "",
         "Mortality_Rate": "0.8699694560044507",
+        "UID": "84000037.0",
+        "ISO3": "USA",
+        "Testing_Rate": "233656.5477545756",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "2949198",
+        "Deaths": "25435",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "37.0",
+        "Incident_Rate": "28119.5116286254",
+        "People_Tested": "24506095.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.8624378559866106",
         "UID": "84000037.0",
         "ISO3": "USA",
         "Testing_Rate": "233656.5477545756",
@@ -661,10 +1231,40 @@
         "ISO3": "USA",
         "Testing_Rate": "",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "254466",
+        "Deaths": "2304",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "38.0",
+        "Incident_Rate": "33391.77127320349",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.9054254792388768",
+        "UID": "84000038.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
       }
     },
     "Northern Mariana Islands": {
       "2022-07-20 04:32:01": {
+        "Confirmed": "12398",
+        "Deaths": "35",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "69.0",
+        "Incident_Rate": "22482.9537211664",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.282303597354412",
+        "UID": "580.0",
+        "ISO3": "MNP",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
         "Confirmed": "12398",
         "Deaths": "35",
         "Recovered": "",
@@ -695,10 +1295,40 @@
         "ISO3": "USA",
         "Testing_Rate": "",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "2891756",
+        "Deaths": "38959",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "39.0",
+        "Incident_Rate": "24738.910609028924",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.347243681693753",
+        "UID": "84000039.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
       }
     },
     "Oklahoma": {
       "2022-07-20 04:32:01": {
+        "Confirmed": "1104163",
+        "Deaths": "16189",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "40.0",
+        "Incident_Rate": "27904.247971491324",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.4661784537246765",
+        "UID": "84000040.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
         "Confirmed": "1104163",
         "Deaths": "16189",
         "Recovered": "",
@@ -729,6 +1359,21 @@
         "ISO3": "USA",
         "Testing_Rate": "285972.5962050265",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "839294",
+        "Deaths": "7981",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "41.0",
+        "Incident_Rate": "19899.15445178303",
+        "People_Tested": "12061572.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.9509182717855722",
+        "UID": "84000041.0",
+        "ISO3": "USA",
+        "Testing_Rate": "285972.5962050265",
+        "Hospitalization_Rate": ""
       }
     },
     "Pennsylvania": {
@@ -742,6 +1387,21 @@
         "People_Tested": "26760984.0",
         "People_Hospitalized": "",
         "Mortality_Rate": "1.5124374768768127",
+        "UID": "84000042.0",
+        "ISO3": "USA",
+        "Testing_Rate": "209037.70500037144",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "3058316",
+        "Deaths": "46047",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "42.0",
+        "Incident_Rate": "23889.38156406789",
+        "People_Tested": "26760984.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.5056325114867135",
         "UID": "84000042.0",
         "ISO3": "USA",
         "Testing_Rate": "209037.70500037144",
@@ -763,6 +1423,21 @@
         "ISO3": "PRI",
         "Testing_Rate": "139770.5290488068",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "824108",
+        "Deaths": "4700",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "72.0",
+        "Incident_Rate": "25804.22545178092",
+        "People_Tested": "4469049.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.5703135996738291",
+        "UID": "630.0",
+        "ISO3": "PRI",
+        "Testing_Rate": "139933.53777788355",
+        "Hospitalization_Rate": ""
       }
     },
     "Rhode Island": {
@@ -780,10 +1455,40 @@
         "ISO3": "USA",
         "Testing_Rate": "776919.9545763909",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "407886",
+        "Deaths": "3624",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "44.0",
+        "Incident_Rate": "38503.0221048349",
+        "People_Tested": "8232853.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.888483546873391",
+        "UID": "84000044.0",
+        "ISO3": "USA",
+        "Testing_Rate": "777152.7364137438",
+        "Hospitalization_Rate": ""
       }
     },
     "South Carolina": {
       "2022-07-20 04:32:01": {
+        "Confirmed": "1587503",
+        "Deaths": "18132",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "45.0",
+        "Incident_Rate": "30833.0002404484",
+        "People_Tested": "12808249.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.1421710699129388",
+        "UID": "84000045.0",
+        "ISO3": "USA",
+        "Testing_Rate": "248765.9831173377",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
         "Confirmed": "1587503",
         "Deaths": "18132",
         "Recovered": "",
@@ -814,6 +1519,21 @@
         "ISO3": "USA",
         "Testing_Rate": "153145.90141512154",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "248788",
+        "Deaths": "2947",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "46.0",
+        "Incident_Rate": "28122.474309310142",
+        "People_Tested": "1354819.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.184542662829397",
+        "UID": "84000046.0",
+        "ISO3": "USA",
+        "Testing_Rate": "153145.90141512154",
+        "Hospitalization_Rate": ""
       }
     },
     "Tennessee": {
@@ -827,6 +1547,21 @@
         "People_Tested": "13371218.0",
         "People_Hospitalized": "",
         "Mortality_Rate": "1.2383015865623803",
+        "UID": "84000047.0",
+        "ISO3": "USA",
+        "Testing_Rate": "195795.5383769692",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "2172478",
+        "Deaths": "26871",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "47.0",
+        "Incident_Rate": "31811.72422902096",
+        "People_Tested": "13371218.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.236882490869873",
         "UID": "84000047.0",
         "ISO3": "USA",
         "Testing_Rate": "195795.5383769692",
@@ -848,10 +1583,40 @@
         "ISO3": "USA",
         "Testing_Rate": "175468.07769006916",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "7424357",
+        "Deaths": "89018",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "48.0",
+        "Incident_Rate": "25604.86780863806",
+        "People_Tested": "50903098.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.198999455441057",
+        "UID": "84000048.0",
+        "ISO3": "USA",
+        "Testing_Rate": "175552.8586974129",
+        "Hospitalization_Rate": ""
       }
     },
     "Utah": {
       "2022-07-20 04:32:01": {
+        "Confirmed": "997556",
+        "Deaths": "4869",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "49.0",
+        "Incident_Rate": "31115.69147194068",
+        "People_Tested": "6302776.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.4880928990452666",
+        "UID": "84000049.0",
+        "ISO3": "USA",
+        "Testing_Rate": "196595.71335619493",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
         "Confirmed": "997556",
         "Deaths": "4869",
         "Recovered": "",
@@ -882,6 +1647,21 @@
         "ISO3": "USA",
         "Testing_Rate": "600824.2132473489",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "137264",
+        "Deaths": "689",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "50.0",
+        "Incident_Rate": "21997.823679584097",
+        "People_Tested": "3749077.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.5019524420095582",
+        "UID": "84000050.0",
+        "ISO3": "USA",
+        "Testing_Rate": "600824.2132473489",
+        "Hospitalization_Rate": ""
       }
     },
     "Virgin Islands": {
@@ -898,6 +1678,21 @@
         "UID": "850.0",
         "ISO3": "VIR",
         "Testing_Rate": "413979.9380989671",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "21499",
+        "Deaths": "120",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "78.0",
+        "Incident_Rate": "20042.32389901928",
+        "People_Tested": "445070.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.5581654960695847",
+        "UID": "850.0",
+        "ISO3": "VIR",
+        "Testing_Rate": "414914.04705970094",
         "Hospitalization_Rate": ""
       }
     },
@@ -916,6 +1711,21 @@
         "ISO3": "USA",
         "Testing_Rate": "168258.55580662406",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "1925915",
+        "Deaths": "20839",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "51.0",
+        "Incident_Rate": "22563.53714402136",
+        "People_Tested": "14370518.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.0820311384458816",
+        "UID": "84000051.0",
+        "ISO3": "USA",
+        "Testing_Rate": "168361.38493745957",
+        "Hospitalization_Rate": ""
       }
     },
     "Washington": {
@@ -929,6 +1739,21 @@
         "People_Tested": "",
         "People_Hospitalized": "",
         "Mortality_Rate": "0.7876987238145611",
+        "UID": "84000053.0",
+        "ISO3": "USA",
+        "Testing_Rate": "",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "1713842",
+        "Deaths": "13509",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "53.0",
+        "Incident_Rate": "22506.448875906728",
+        "People_Tested": "",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.7882290199446623",
         "UID": "84000053.0",
         "ISO3": "USA",
         "Testing_Rate": "",
@@ -950,6 +1775,21 @@
         "ISO3": "USA",
         "Testing_Rate": "368411.0176229964",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "546772",
+        "Deaths": "7115",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "54.0",
+        "Incident_Rate": "30509.32763885998",
+        "People_Tested": "6606608.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.3012736570270609",
+        "UID": "84000054.0",
+        "ISO3": "USA",
+        "Testing_Rate": "368642.0812578432",
+        "Hospitalization_Rate": ""
       }
     },
     "Wisconsin": {
@@ -967,6 +1807,21 @@
         "ISO3": "USA",
         "Testing_Rate": "294624.3443893052",
         "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "1759023",
+        "Deaths": "14867",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "55.0",
+        "Incident_Rate": "30211.12819827584",
+        "People_Tested": "17164360.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "0.8451850828556534",
+        "UID": "84000055.0",
+        "ISO3": "USA",
+        "Testing_Rate": "294796.98696455813",
+        "Hospitalization_Rate": ""
       }
     },
     "Wyoming": {
@@ -983,6 +1838,21 @@
         "UID": "84000056.0",
         "ISO3": "USA",
         "Testing_Rate": "252321.2597989837",
+        "Hospitalization_Rate": ""
+      },
+      "2022-07-21 04:32:12": {
+        "Confirmed": "168678",
+        "Deaths": "1850",
+        "Recovered": "",
+        "Active": "",
+        "FIPS": "56.0",
+        "Incident_Rate": "29144.773558596928",
+        "People_Tested": "1467356.0",
+        "People_Hospitalized": "",
+        "Mortality_Rate": "1.0967642490425544",
+        "UID": "84000056.0",
+        "ISO3": "USA",
+        "Testing_Rate": "253534.8910340919",
         "Hospitalization_Rate": ""
       }
     }
