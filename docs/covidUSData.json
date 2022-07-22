@@ -162,7 +162,7 @@
     },
     "California": {
       "2022-07-20 04:32:01": {
-        "Confirmed": "10508352",
+        "Confirmed": "10508209",
         "Deaths": "93003",
         "Recovered": "",
         "Active": "",
@@ -177,7 +177,7 @@
         "Hospitalization_Rate": ""
       },
       "2022-07-21 04:32:12": {
-        "Confirmed": "10515406",
+        "Confirmed": "10514833",
         "Deaths": "93046",
         "Recovered": "",
         "Active": "",
@@ -1283,7 +1283,7 @@
     "Ohio": {
       "2022-07-20 04:32:01": {
         "Confirmed": "2891756",
-        "Deaths": "38959",
+        "Deaths": "38981",
         "Recovered": "",
         "Active": "",
         "FIPS": "39.0",
@@ -1298,7 +1298,7 @@
       },
       "2022-07-21 04:32:12": {
         "Confirmed": "2891756",
-        "Deaths": "38959",
+        "Deaths": "38981",
         "Recovered": "",
         "Active": "",
         "FIPS": "39.0",
